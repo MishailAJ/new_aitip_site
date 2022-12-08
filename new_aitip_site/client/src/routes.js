@@ -1,3 +1,5 @@
+// Сопоставление ссылки на страницу и загружающейся JS страницы (компонента)
+
 import {
     ADMIN, ADMISSION_APE, ADMISSION_BAC, CONTACTS, COUNTERING, DOCUMENTS, EDUCATIONAL_P,
     EMPLOYERS_P,
@@ -117,9 +119,3 @@ export const authRoutes = [
         Component: <Admin/>
     },
 ]
-
-
-
-
-
-

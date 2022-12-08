@@ -1,9 +1,10 @@
+// Отвечает за то, какие страницы доступны, для каких нужно быть авторизованным (Admin) и какая запускается по умолчанию (Main)
+
 import React, {useContext} from 'react';
 import {authRoutes, publicRoutes} from "../routes";
 import {Route} from "react-router-dom";
 import {Routes} from "react-router";
 import {Context} from "../index";
-import Auth from "../pages/Auth";
 import Main from "../pages/Main";
 
 

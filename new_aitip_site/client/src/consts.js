@@ -1,3 +1,5 @@
+// Создание переменной, отвечающей за относительную ссылку на каждую страницу
+
 export const MAIN_ROUTE = "/"
 export const ADMIN = "/admin"
 export const CONTACTS = "/contacts"
