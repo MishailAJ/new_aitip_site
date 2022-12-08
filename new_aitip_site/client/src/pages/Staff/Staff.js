@@ -1,11 +1,11 @@
 import React from 'react';
 
-const References = () => {
+const Staff = () => {
     return (
         <div>
-            References
+            Staff
         </div>
     );
 };
 
-export default References;
+export default Staff;

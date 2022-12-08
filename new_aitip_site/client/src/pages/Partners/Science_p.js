@@ -1,11 +1,11 @@
 import React from 'react';
 
-const AllPrograms = () => {
+const Science_p = () => {
     return (
         <div>
-            AllPrograms
+            Science_p
         </div>
     );
 };
 
-export default AllPrograms;
+export default Science_p;

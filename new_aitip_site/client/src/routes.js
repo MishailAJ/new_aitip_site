@@ -1,48 +1,32 @@
 import {
-    ABOUT, ADMIN,
-    ADMISSION, ALLPROGRAMS, ARCHIVE, AUTH, BASIC, CONFERENCES,
-    CONTACTS, COUNTERING, DOCFORCOL, EDUCATIONAL_P, ELECTION,
-    ELS, EMPLOYERS_P,
-    EMPLOYMENT, GRADUATES, GREETING, HISTORY, INDUSTRIAL_P, INFO_EDU_ORG, INTERNATIONAL_ACT,
-    LABORATORIES, LEGAL_CLINIC,
-    MAIN_ROUTE, ONEPROGRAM, PERSON, PERSONALITIES_PAGE,
-    PUBLICATIONS, REFERENCES, REPLACEMENT, REQUISITES,
-    SCHEDULE, STRUCTURE
+    ADMIN, ADMISSION_APE, ADMISSION_BAC, CONTACTS, COUNTERING, DOCUMENTS, EDUCATIONAL_P,
+    EMPLOYERS_P,
+    HISTORY, INDUSTRIAL_P, INFO_EDU_ORG, INTERNATIONAL_ACT,
+    LEGAL_CLINIC,
+    MAIN_ROUTE, PERSONALITIES_PAGE, SCIENCE, SCIENCE_P, STAFF,
+    STRUCTURE, STUDENTS_APE, STUDENTS_BAC
 } from "./consts";
 import Main from "./pages/Main";
-import AllPrograms from "./pages/Education/AllPrograms";
-import OneProgram from "./pages/Education/OneProgram";
-import Admission from "./pages/_Applicant/Admission";
 import Contacts from "./pages/Institute/Contacts";
-import Schedule from "./pages/Education/Schedule";
-import Els from "./pages/Education/Els";
-import Laboratories from "./pages/Science/Laboratories";
-import Employment from "./pages/_Students&Graduates/Employment";
-import Graduates from "./pages/_Students&Graduates/Graduates";
-import Docforcol from "./pages/_Employees/Docforcol";
-import Election from "./pages/_Employees/Election";
-import Replacement from "./pages/_Employees/Replacement";
-import References from "./pages/Education/References";
-import Industrial_p from "./pages/_Partners/Industrial_p";
-import Educational_p from "./pages/_Partners/Educational_p";
-import Employers_p from "./pages/_Partners/Employers_p";
-import About from "./pages/Institute/About";
-import Greeting from "./pages/Institute/Greeting";
+import Industrial_p from "./pages/Partners/Industrial_p";
+import Educational_p from "./pages/Partners/Educational_p";
+import Employers_p from "./pages/Partners/Employers_p";
 import History from "./pages/Institute/History";
-import Archive from "./pages/Institute/Archive";
 import Structure from "./pages/Institute/Structure";
-import Basic from "./pages/Institute/Basic";
 import Info_edu_org from "./pages/Institute/Info_edu_org";
-import Requisites from "./pages/Institute/Requisites";
 import Inter_act from "./pages/Institute/Inter_act";
 import Countering from "./pages/Institute/Countering";
-import Conferences from "./pages/Science/Conferences";
-import Publications from "./pages/Science/Publications";
-import Legal_Clinic from "./pages/LegalClinic/Legal_Clinic";
-import Auth from "./pages/Auth";
 import Admin from "./pages/Admin";
-import PersonPage from "./pages/PersonPage";
 import PersonalitiesPage from "./pages/Institute/PersonalitiesPage";
+import Legal_Clinic from "./pages/Partners/Legal_Clinic";
+import Admission_BAC from "./pages/Entrance/Admission_BAC";
+import Admission_APE from "./pages/Entrance/Admission_APE";
+import Documents from "./pages/Institute/Documents";
+import Science from "./pages/Science/Science";
+import Staff from "./pages/Staff/Staff";
+import Students_BAC from "./pages/Students/Students_BAC";
+import Students_APE from "./pages/Students/Students_APE";
+import Science_p from "./pages/Partners/Science_p";
 
 export const publicRoutes = [
     {
@@ -50,60 +34,8 @@ export const publicRoutes = [
         Component: <Main/>
     },
     {
-        path: AUTH,
-        Component: <Auth/>
-    },
-    {
-        path: ALLPROGRAMS,
-        Component: <AllPrograms/>
-    },
-    {
-        path: ONEPROGRAM + "/:id",
-        Component: <OneProgram/>
-    },
-    {
-        path: ADMISSION,
-        Component: <Admission/>
-    },
-    {
         path: CONTACTS,
         Component: <Contacts/>
-    },
-    {
-        path: SCHEDULE,
-        Component: <Schedule/>
-    },
-    {
-        path: ELS,
-        Component: <Els/>
-    },
-    {
-        path: LABORATORIES,
-        Component: <Laboratories/>
-    },
-    {
-        path: EMPLOYMENT,
-        Component: <Employment/>
-    },
-    {
-        path: GRADUATES,
-        Component: <Graduates/>
-    },
-    {
-        path: DOCFORCOL,
-        Component: <Docforcol/>
-    },
-    {
-        path: ELECTION,
-        Component: <Election/>
-    },
-    {
-        path: REPLACEMENT,
-        Component: <Replacement/>
-    },
-    {
-        path: REFERENCES,
-        Component: <References/>
     },
     {
         path: INDUSTRIAL_P,
@@ -118,44 +50,24 @@ export const publicRoutes = [
         Component: <Employers_p/>
     },
     {
-        path: ABOUT,
-        Component: <About/>
-    },
-    {
-        path: GREETING,
-        Component: <Greeting/>
+        path: SCIENCE_P,
+        Component: <Science_p/>
     },
     {
         path: HISTORY,
         Component: <History/>
     },
     {
-        path: ARCHIVE,
-        Component: <Archive/>
-    },
-    {
         path: PERSONALITIES_PAGE,
         Component: <PersonalitiesPage/>
-    },
-    {
-        path: PERSON  + "/:id",
-        Component: <PersonPage/>
     },
     {
         path: STRUCTURE,
         Component: <Structure/>
     },
     {
-        path: BASIC,
-        Component: <Basic/>
-    },
-    {
         path: INFO_EDU_ORG,
         Component: <Info_edu_org/>
-    },
-    {
-        path: REQUISITES,
-        Component: <Requisites/>
     },
     {
         path: INTERNATIONAL_ACT ,
@@ -166,16 +78,36 @@ export const publicRoutes = [
         Component: <Countering/>
     },
     {
-        path: CONFERENCES,
-        Component: <Conferences/>
-    },
-    {
-        path: PUBLICATIONS,
-        Component: <Publications/>
-    },
-    {
         path: LEGAL_CLINIC,
         Component: <Legal_Clinic/>
+    },
+    {
+        path: ADMISSION_BAC,
+        Component: <Admission_BAC/>
+    },
+    {
+        path: ADMISSION_APE,
+        Component: <Admission_APE/>
+    },
+    {
+        path: DOCUMENTS,
+        Component: <Documents/>
+    },
+    {
+        path: SCIENCE,
+        Component: <Science/>
+    },
+    {
+        path: STAFF,
+        Component: <Staff/>
+    },
+    {
+        path: STUDENTS_BAC,
+        Component: <Students_BAC/>
+    },
+    {
+        path: STUDENTS_APE,
+        Component: <Students_APE/>
     },
 ]
 

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Schedule = () => {
+const Documents = () => {
     return (
         <div>
-            Schedule
+            Documents
         </div>
     );
 };
 
-export default Schedule;
+export default Documents;
