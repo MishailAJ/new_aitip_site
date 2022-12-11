@@ -2,7 +2,7 @@ import React from 'react';
 import {Card, Col} from "react-bootstrap";
 import {useNavigate} from "react-router";
 import {PERSON} from "../consts";
-import logo from "../local_asets/logo.png"
+import logo from "../local_assets/logo.png"
 import {observer} from "mobx-react-lite";
 
 
