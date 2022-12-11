@@ -65,17 +65,21 @@
 .Card-body-left {
     width: 50%;
     height: 100%;
-    padding: 20px 5px 40px 0;
+    padding: 20px 40px 40px 0;
 }
 
-.Card-body h1, p, li {
+.Card-body-none {
+    padding: 40px 100px 40px 100px;
+}
+
+.Card-body h1, h2, p, li {
     word-wrap: break-word;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
 }
 
 .Card-body h1 {
-    margin: 0 0 6px 0;
+    margin: 0 0 30px 0;
     font-size: 30px;
     font-style: normal;
     font-weight: 700;
@@ -83,8 +87,25 @@
     line-height: 41px;
 }
 
+.Card-body h2 {
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.Card-body h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
 .Card-body p {
     margin-bottom: 25px;
+}
+
+.Card-body a {
+    text-decoration: none;
 }
 
 .Card-body p, li {
@@ -95,9 +116,10 @@
 }
 
 .Card-megaList {
-    padding-left: 0;
+    padding: 0;
+    margin: 20px 0 0 0;
 }
 
-.Card-megaList li {
-    margin-bottom: 25px;
+.Card-megaList li:not(:last-child) {
+    margin-bottom: 15px;
 }
