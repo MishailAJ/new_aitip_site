@@ -15,7 +15,6 @@ import {
 import {useNavigate} from "react-router";
 import "./NavBar.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import DropdownItem from "react-bootstrap/DropdownItem";
 import First from "./1";
 import Second from "./2";
 import Third from "./3";

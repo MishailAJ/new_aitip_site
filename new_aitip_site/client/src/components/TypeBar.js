@@ -1,4 +1,4 @@
-// Пока не сделанная страница для
+// Пока несделанная панель с фильтрами для страницы Персоналии
 
 import React, {useContext} from 'react';
 import {observer} from "mobx-react-lite";

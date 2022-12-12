@@ -1,10 +1,10 @@
-import React, {useContext, useEffect} from 'react';
+// Отрисовка каждого сотрудника в карточке
+
+import React, {useContext} from 'react';
 
 import {Row} from "react-bootstrap";
 import {Context} from "../index";
 import StafferItem from "./StafferItem";
-
-import {fetchStaff} from "../http/staffAPI";
 import {observer} from "mobx-react-lite";
 
 

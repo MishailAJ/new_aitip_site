@@ -10,7 +10,6 @@ import NavBar from "./components/navbar/NavBar";
 const App = observer(() => {
   return (
       <BrowserRouter>
-        <NavBar/>
         <AppRouter/>
       </BrowserRouter>
   )

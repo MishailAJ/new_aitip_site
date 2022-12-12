@@ -1,3 +1,5 @@
+// Модель сотрудника: поля, которые будут у каждого сотрудника, их типы данных и свойства.
+
 const sequelize = require("../db")
 const {DataTypes} = require("sequelize")
 

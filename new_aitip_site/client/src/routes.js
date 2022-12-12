@@ -7,7 +7,7 @@ import {
     LEGAL_CLINIC,
     MAIN_ROUTE, PERSONALITIES_PAGE, SCIENCE, SCIENCE_P, STAFF,
     STRUCTURE, STUDENTS_APE, STUDENTS_BAC
-} from "./consts";
+} from "./consts/pageConsts";
 import Main from "./pages/Main";
 import Contacts from "./pages/Institute/Contacts";
 import Industrial_p from "./pages/Partners/Industrial_p";
@@ -21,8 +21,8 @@ import Countering from "./pages/Institute/Countering";
 import Admin from "./pages/Admin";
 import PersonalitiesPage from "./pages/Institute/PersonalitiesPage";
 import Legal_Clinic from "./pages/Partners/Legal_Clinic";
-import Admission_BAC from "./pages/Entrance/Admission_BAC";
-import Admission_APE from "./pages/Entrance/Admission_APE";
+import AdmissionBac from "./pages/Entrance/AdmissionBac";
+import AdmissionAdd from "./pages/Entrance/AdmissionAdd";
 import Documents from "./pages/Institute/Documents";
 import Science from "./pages/Science/Science";
 import Staff from "./pages/Staff/Staff";
@@ -85,11 +85,11 @@ export const publicRoutes = [
     },
     {
         path: ADMISSION_BAC,
-        Component: <Admission_BAC/>
+        Component: <AdmissionBac/>
     },
     {
         path: ADMISSION_APE,
-        Component: <Admission_APE/>
+        Component: <AdmissionAdd/>
     },
     {
         path: DOCUMENTS,

@@ -1,3 +1,6 @@
+// Относительные ссылки в серверных запросах, связанных с БД. Работающие благодаря функциям userController. Скорее всего не будет использоваться.
+
+
 const Router = require("express")
 const router = new Router()
 const userController = require("../controllers/userController")
