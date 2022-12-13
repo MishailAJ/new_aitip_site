@@ -1,6 +1,5 @@
 import React from 'react';
 import "../../../css/AdmissionBac.css"
-import {forEach} from "react-bootstrap/ElementChildren";
 
 const AdmissionBacContent2 = () => {
     const specialties = ["директор и администратор предприятия",
@@ -14,9 +13,6 @@ const AdmissionBacContent2 = () => {
         "Информатика и ИКТ": "40 баллов",
         "Обществознание": "42 балла",
     };
-    let passing_points_json = JSON.stringify(passing_points_obj);
-
-    console.log(passing_points_json)
 
 
     let col_count = 1
@@ -45,16 +41,41 @@ const AdmissionBacContent2 = () => {
                 <div className="extended_description">
                     Менеджер (руководитель) профессионально занимается управлением организациями и социально-экономическими процессами в разных сферах и уровнях. Менеджер осуществляет весь спектр управленческих функций: организацию, планирование и стимулирование работы предприятия или его подразделений, координирует деятельность подчиненных, осуществляет контроль, оценивает и корректирует их работу, прогнозирует и предотвращает возможные риски. В компетенции менеджера также входит управление персоналом, материальное и нематериальное стимулирование работников, регулирование межличностных отношений в коллективе.
                 </div>
-                <div className="title_who_can_you_become">Кем ты можешь стать</div>
+                <div className="title_who_can_you_become">Кем ты можешь стать:</div>
                 <ul type="circle" style={{columnCount: col_count}} className="specialties">
                     {specialties.map(el =>
                         <li className="specialty" key={el}>{el}</li>
                     )}
                 </ul>
-                <div className="passing_points">
-                    <ul>
-                        {passing_points_json}
-                    </ul>
+                <div className="numbers_and_documents">
+                    <div className="passing_points">
+                        <div>
+                            <div style={{color: "#AD4820"}}>Проходные баллы</div>
+                            <div>2021 года</div>
+                        </div>
+                        <ul>
+                            {Object.keys(passing_points_obj).map(key =>
+                                <li>{key} - {passing_points_obj[key]} </li>)}
+                        </ul>
+                    </div>
+                    <div className="passing_points">
+                        <div>
+                            <div style={{color: "#AD4820"}}>Проходные баллы</div>
+                            <div>2021 года</div>
+                        </div>
+                        <ul>
+                            {Object.keys(passing_points_obj).map(key =>
+                                <li>{key} - {passing_points_obj[key]} </li>)}
+                        </ul>
+                    </div>
+                    <div className="document">
+                        <img className="document_icon" src={"../asets/document_icon.png"}/>
+                        <div>Правила проведения вступительных испытаний</div>
+                    </div>
+                    <div className="document">
+                        <img className="document_icon" src={"../asets/document_icon.png"}/>
+                        <div>Расписание вступительных испытаний 2022</div>
+                    </div>
                 </div>
             </div>
         </div>
