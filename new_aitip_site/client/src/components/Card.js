@@ -1,6 +1,10 @@
 import React from "react";
 import FadingImg from "./FadingImg";
+<<<<<<< HEAD
 import "../css/Card.css";
+=======
+import "./Card.css";
+>>>>>>> origin/master
 
 class Card extends React.Component {
     /*
