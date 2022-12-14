@@ -3,7 +3,7 @@ import AdmissionBacContent2 from "./AdmissionBacParts/AdmissionBacContent2";
 
 const AdmissionBac = () => {
     return (
-        <div>
+        <div className="rootContainer">
             <AdmissionBacContent2/>
         </div>
     );

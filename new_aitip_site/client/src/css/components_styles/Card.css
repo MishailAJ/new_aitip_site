@@ -1,10 +1,14 @@
 /* TODO: изменить подключение шрифтов */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
 
+
 .Card {
     background-color: #FFFFFF;
     display: flex;
     border-radius: 10px;
+    margin: calc((100vh - var(--main_part_width)) * 0.5);
+    width: var(--main_part_width);
+    padding: 30px;
 }   
 
 .Card-top {
@@ -24,20 +28,15 @@
 }
 
 .Card-image img {
-    width: 100%;
-    height: 100%;
     align-self: flex-end;
     border-radius: 10px;
 }
 
 .Card-image-top, .Card-image-bottom {
-    width: 100%;
-    height: 50%;
+
 }
 
 .Card-image-right, .Card-image-left {
-    width: 50%; 
-    height: 100%
 }
 
 .Card-body {
@@ -45,37 +44,33 @@
 }
 
 .Card-body-top {
-    height: 50%; 
-    width: 100%; 
     padding: 0 20px 5px 34px;
 }
 
 .Card-body-right {
-    height: 50%;
-    width: 100%;
     padding: 20px 0 40px 34px;
 }
 
 .Card-body-bottom {
-    height: 50%;
-    width: 100%;
     padding: 20px 5px 0 34px;
 }
 
 .Card-body-left {
-    width: 50%;
-    height: 100%;
-    padding: 20px 5px 40px 0;
+    padding: 20px 40px 40px 0;
 }
 
-.Card-body h1, p, li {
+.Card-body-none {
+    padding: 40px 100px 40px 100px;
+}
+
+.Card-body h1, h2, p, li {
     word-wrap: break-word;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
 }
 
 .Card-body h1 {
-    margin: 0 0 6px 0;
+    margin: 0 0 30px 0;
     font-size: 30px;
     font-style: normal;
     font-weight: 700;
@@ -83,8 +78,24 @@
     line-height: 41px;
 }
 
+.Card-body h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 10px 0 30px;
+}
+
+.Card-body h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
 .Card-body p {
     margin-bottom: 25px;
+}
+
+.Card-body a {
+    text-decoration: none;
 }
 
 .Card-body p, li {
@@ -95,9 +106,10 @@
 }
 
 .Card-megaList {
-    padding-left: 0;
+    padding: 0;
+    margin: 20px 0 0 0;
 }
 
-.Card-megaList li {
-    margin-bottom: 25px;
+.Card-megaList li:not(:last-child) {
+    margin-bottom: 15px;
 }
