@@ -22,7 +22,7 @@ import "./Card.css";
  * Props:
  * @param {string} title - заголовок карточки (помещается в стилизованный <h1>).
  * @param {Object | string} imgSrc - изображение, которое помещается в отведённое для него место (либо импортированное, либо путь к нему). Можно не указывать, если imgPos="none".
- * @param {"left" | "right" | "top" | "bottom"} imgPos - позиция изображения в карточке (top, right, bottom, left, none). imgPos="none" указывает на отсутствие изображения.
+ * @param {"left" | "right" | "top" | "bottom", "none"} imgPos - позиция изображения в карточке (top, right, bottom, left, none). imgPos="none" указывает на отсутствие изображения.
  * @param {Object} style - дополнительные стили. Также здесь указывается столбцы грида, в которых должна размещаться карточка (пока это не реализовано по-другому).  
 */
 class Card extends React.Component {
