@@ -1,6 +1,7 @@
 import React from 'react';
 import "../../../css/AdmissionBac.css"
 import {forEach} from "react-bootstrap/ElementChildren";
+import Card from '../../../components/Card';
 
 const AdmissionBacContent2 = () => {
     const specialties = ["директор и администратор предприятия",
@@ -29,7 +30,11 @@ const AdmissionBacContent2 = () => {
     }
 
     return (
-        <div className="content2">
+        <Card
+            imgPos="none"
+            className="content2"
+            style={{gridColumnStart: 1, gridColumnEnd: 4}}
+        >
             <div className="title_choose_direction">
                 <div style={{color: "#292D32"}}>Выбери</div>
                 <div style={{color: "#076DB1"}}> направление</div>
@@ -57,7 +62,7 @@ const AdmissionBacContent2 = () => {
                     </ul>
                 </div>
             </div>
-        </div>
+        </Card>
     );
 };
 
