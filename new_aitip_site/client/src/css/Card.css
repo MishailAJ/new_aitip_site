@@ -1,6 +1,10 @@
 /* TODO: изменить подключение шрифтов */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
 
+p, li, h1, h2, h3, a {
+    color: #292D32;
+}
+
 .Card {
     background-color: #FFFFFF;
     display: flex;
@@ -28,6 +32,7 @@
     height: 100%;
     align-self: flex-end;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .Card-image-top, .Card-image-bottom {
@@ -122,4 +127,24 @@
 
 .Card-megaList li:not(:last-child) {
     margin-bottom: 15px;
+}
+
+.Card-filesList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px 70px;
+}
+
+.Card-filesList-file {
+    display: flex;
+}
+
+.Card-filesList-file img {
+    margin-right: 15px;
+}
+
+.Card-filesList-file p {
+    margin: 0;
+    font-size: 20px;
+    color: #292D32;
 }
