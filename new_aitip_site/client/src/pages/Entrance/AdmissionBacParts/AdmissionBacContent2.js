@@ -1,6 +1,6 @@
 import React from 'react';
-import "../../../css/AdmissionBac.css"
-import {forEach} from "react-bootstrap/ElementChildren";
+import "../../../css/main_style.css"
+import "../../../css/page_styles/AdmissionBac.css"
 import Card from '../../../components/Card';
 
 const AdmissionBacContent2 = () => {
