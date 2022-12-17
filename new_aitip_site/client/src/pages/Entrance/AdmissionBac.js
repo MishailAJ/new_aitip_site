@@ -12,12 +12,12 @@ const AdmissionBac = () => {
     return (
         <div className='rootContainer'>
             <CardContainer>
-                <AdmissionBacContent1/>
-                {/* <AdmissionBacContent2/> */}
-                <AdmissionBacContent3/>
-                <AdmissionBacContent4/>
-                <AdmissionBacContent5/>
-                <AdmissionBacContent6/>
+                {/*<AdmissionBacContent1/>*/}
+                <AdmissionBacContent2/>
+                {/*<AdmissionBacContent3/>*/}
+                {/*<AdmissionBacContent4/>*/}
+                {/*<AdmissionBacContent5/>*/}
+                {/*<AdmissionBacContent6/>*/}
             </CardContainer>
         </div>
     );
