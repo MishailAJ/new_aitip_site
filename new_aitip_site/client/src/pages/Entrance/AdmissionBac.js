@@ -6,6 +6,7 @@ import AdmissionBacContent4 from "./AdmissionBacParts/AdmissionBacContent4";
 import AdmissionBacContent5 from "./AdmissionBacParts/AdmissionBacContent5";
 import AdmissionBacContent6 from "./AdmissionBacParts/AdmissionBacContent6";
 import CardContainer from '../../components/CardContainer';
+import "../../css/main_style.css"
 
 const AdmissionBac = () => {
     return (
