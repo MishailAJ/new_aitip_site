@@ -1,14 +1,14 @@
 /* TODO: изменить подключение шрифтов */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
 
+p, li, h1, h2, h3, a {
+    color: #292D32;
+}
 
 .Card {
     background-color: #FFFFFF;
     display: flex;
     border-radius: 10px;
-    margin: calc((100vh - var(--main_part_width)) * 0.5);
-    width: var(--main_part_width);
-    padding: 30px;
 }   
 
 .Card-top {
@@ -28,15 +28,21 @@
 }
 
 .Card-image img {
+    width: 100%;
+    height: 100%;
     align-self: flex-end;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .Card-image-top, .Card-image-bottom {
-
+    width: 100%;
+    height: 50%;
 }
 
 .Card-image-right, .Card-image-left {
+    width: 50%; 
+    height: 100%
 }
 
 .Card-body {
@@ -44,18 +50,26 @@
 }
 
 .Card-body-top {
+    height: 50%; 
+    width: 100%; 
     padding: 0 20px 5px 34px;
 }
 
 .Card-body-right {
+    height: 50%;
+    width: 100%;
     padding: 20px 0 40px 34px;
 }
 
 .Card-body-bottom {
+    height: 50%;
+    width: 100%;
     padding: 20px 5px 0 34px;
 }
 
 .Card-body-left {
+    width: 50%;
+    height: 100%;
     padding: 20px 40px 40px 0;
 }
 
@@ -79,9 +93,10 @@
 }
 
 .Card-body h2 {
+    margin: 10px 0;
     font-size: 24px;
     font-weight: 700;
-    margin: 10px 0 30px;
+    margin-bottom: 30px;
 }
 
 .Card-body h3 {
@@ -112,4 +127,24 @@
 
 .Card-megaList li:not(:last-child) {
     margin-bottom: 15px;
+}
+
+.Card-filesList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px 70px;
+}
+
+.Card-filesList-file {
+    display: flex;
+}
+
+.Card-filesList-file img {
+    margin-right: 15px;
+}
+
+.Card-filesList-file p {
+    margin: 0;
+    font-size: 20px;
+    color: #292D32;
 }

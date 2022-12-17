@@ -1,12 +1,24 @@
-div, p, ul, li, img{
-    background-color: white;
+* {
+    --bgcolor: #EEEEEE;
+    --main_part_width: 60vw;
+    --font_size_const: calc(0.1vw + 8px);
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    /* overflow-x: hidden;
+    width: 100vw;
+    background: var(--bgcolor); */
+}
+
+.rootContainer {
+    background-color: var(--bgcolor);
 }
 
 .content2{
-    width: 100%;
-    background: var(--bgcolor);
-    justify-content: center;
-    align-items: center;
+    /* width: 100%; */
+    /* background: var(--bgcolor); */
+    /* justify-content: center;
+    align-items: center; */
 }
 
 .title_choose_direction{
@@ -17,17 +29,20 @@ div, p, ul, li, img{
     height: auto;
     margin: 0 calc((100% - var(--main_part_width)) * 0.5);
     padding: 0;
+    font-style: normal;
     font-weight: 500;
-    font-size: calc(var(--font_size_const) * 1.5);
+    font-size: calc(var(--font_size_const) * 2);
     justify-content: center;
     align-items: center;
     text-align: center;
+    background: #FFFFFF;
 }
 
 .title_choose_direction div {
     margin: 0 5px;
     float: left;
     width: auto;
+    background-color: #FFFFFF;
 }
 
 .tracks {
@@ -37,10 +52,8 @@ div, p, ul, li, img{
     width: var(--main_part_width);
     margin: 0 calc((100% - var(--main_part_width)) * 0.5);
     padding: 0;
-    background-color: var(--bgcolor);
     justify-content: center;
     text-align: center;
-    font-size: var(--font_size_const);
 }
 
 .tracks li {
@@ -53,20 +66,17 @@ div, p, ul, li, img{
     align-items: center;
     text-align: center;
     border-radius: 10px;
-    background: var(--bgcolor);
-    font-size: var(--font_size_const);
+    font-size: calc(var(--font_size_const) * 1.3);
 }
 
 .tracks li button {
     display: inline-block;
     width: 100%;
     height: 70px;
-    padding: 0 10px;
+    padding: 0 8px;
     text-align: center;
     border-radius: 10px;
     border-width: 0;
-    background: var(--bgcolor);
-    font-size: var(--font_size_const);
 }
 
 .tracks li :hover{
@@ -80,94 +90,52 @@ div, p, ul, li, img{
 }
 
 .direction_block {
-    flex-wrap: wrap;
     width: var(--main_part_width);
     margin: 0 calc((100% - var(--main_part_width)) * 0.5);
-    padding: 15px calc(var(--main_part_width) * 0.05);
     justify-content: center;
     align-items: center;
+    background: white;
 }
 
 .extended_description {
     -ms-hyphens: auto;
     display: flex;
     width: auto;
+    margin: calc(var(--main_part_width) * 0.03) calc(var(--main_part_width) * 0.06);
     padding: 5px 10px;
     border-radius: 10px;
     background: var(--bgcolor);
     justify-content: center;
     align-items: center;
-    font-size: var(--font_size_const);
+    font-size: calc(var(--font_size_const) * 1.3);
 }
 
 .title_who_can_you_become{
     display: flex;
-    width: max-content;
-    margin: calc(var(--main_part_width) * 0.01) 0 0;
+    width: var(--main_part_width);
+    margin: calc(var(--main_part_width) * 0.01) calc(var(--main_part_width) * 0.06);
     justify-content: left;
     font-weight: 500;
-    font-size: var(--font_size_const);
+    font-size: calc(var(--font_size_const) * 1.5);
+    background: white;
 }
 
 .specialties {
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 10px 0;
-    padding: 0;
     list-style-type: disc;
-    width: calc(var(--main_part_width) * 0.9);
-    font-size: var(--font_size_const);
+    width: var(--main_part_width);
+    margin: calc(var(--main_part_width) * 0.01) calc(var(--main_part_width) * 0.04);
+    padding: 8px;
+    background: white;
 }
 
 .specialty {
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: auto;
+    background: white;
     margin: 0;
-    padding: 0;
+    padding: calc(var(--main_part_width) * 0.01);
+    width: auto;
+    max-width: 220px;
+    height: auto;
     justify-content: left;
     align-content: flex-start;
-}
-
-.entrance_tests_and_points{
-    display: inline-block;
-    width: calc((var(--main_part_width)) * 0.5 - 20px);
-    min-width: 200px;
-    padding: 10px;
-    border: solid var(--aitip_red) 2px;
-    border-radius: 10px;
-    font-weight: 500;
-    box-sizing: border-box;
-    font-size: var(--font_size_const);
-}
-
-.entrance_tests_and_points_title{
-    width: auto;
-    font-size: var(--font_size_const);
-}
-
-.entrance_tests_and_points ul {
-    width: auto;
-    background: white;
-    padding: 0;
-    margin: 0;
-}
-
-.entrance_tests_and_points ul>li {
-    background: white;
-    width: auto;
-}
-
-.documents_block{
-    display: flex;
-}
-
-.document{
-    display: inline-block;
-    height: 50px;
-}
-
-.document_icon {
-    width: 35px;
-    height: 35px;
+    font-size: calc(var(--font_size_const) * 1.5);
 }
