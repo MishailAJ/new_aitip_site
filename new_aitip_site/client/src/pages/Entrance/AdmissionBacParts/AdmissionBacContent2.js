@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from '../../../components/Card';
 import "../../../css/page_styles/AdmissionBac.css"
 
 const AdmissionBacContent2 = () => {
@@ -25,7 +26,9 @@ const AdmissionBacContent2 = () => {
     }
 
     return (
-        <div className="content2">
+        <Card
+            width={12}
+        >
             <div className="title_choose_direction">
                 <div style={{color: "#292D32"}}>Выбери</div>
                 <div style={{color: "#076DB1"}}> направление</div>
@@ -78,7 +81,7 @@ const AdmissionBacContent2 = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Card>
     );
 };
 
