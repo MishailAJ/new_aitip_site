@@ -3,11 +3,13 @@ import Card from '../../../components/Card';
 import Content4Img from '../../../local_assets/Content4_photo.png';
 
 const AdmissionBacContent4 = () => {
+    
     return (
         <Card
             imgSrc={Content4Img}
             imgPos='bottom'
-            style={{gridColumnStart: 3, gridColumnEnd: 4, height: '400px'}}
+            width={4}
+            style={{minHeight: '460px', height: '26vmax'}}
         >
             <h1>Важные <a href='' style={{color: '#AD4820'}}>даты</a></h1>
             <p>

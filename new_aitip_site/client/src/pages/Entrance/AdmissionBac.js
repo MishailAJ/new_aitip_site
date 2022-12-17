@@ -10,11 +10,9 @@ import CardContainer from '../../components/CardContainer';
 const AdmissionBac = () => {
     return (
         <div className='rootContainer'>
-            <CardContainer
-                columns={3}
-            >
+            <CardContainer>
                 <AdmissionBacContent1/>
-                <AdmissionBacContent2/>
+                {/* <AdmissionBacContent2/> */}
                 <AdmissionBacContent3/>
                 <AdmissionBacContent4/>
                 <AdmissionBacContent5/>

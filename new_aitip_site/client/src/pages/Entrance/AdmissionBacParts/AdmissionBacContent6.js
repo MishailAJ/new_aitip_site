@@ -6,7 +6,8 @@ const AdmissionBacContent6 = () => {
     return (
         <Card
             imgPos='none'
-            style={{gridColumnStart: 1, gridColumnEnd: 4}}
+            style={{gridColumnStart: 1, gridColumnEnd: 13}}
+            width={12}
         >
             <h1>Важные <a href='' style={{color: '#076DB1'}}>документы</a></h1>
             <a href=''>

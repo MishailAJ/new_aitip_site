@@ -8,7 +8,7 @@ const AdmissionBacContent3 = () => {
             title="Траектория поступления"
             imgSrc={Content3Img}
             imgPos='left'
-            style={{gridColumnStart: 1, gridColumnEnd: 3}}
+            width={8}
         >
             <ul className='Card-megaList'>
                 <li>Выбери <a href='' style={{color: '#076DB1'}}>образовательную программу</a></li>

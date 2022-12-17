@@ -90,6 +90,7 @@ p, li, h1, h2, h3, a {
     font-weight: 700;
     font-size: 30px;
     line-height: 41px;
+    word-wrap: normal;
 }
 
 .Card-body h2 {
@@ -147,4 +148,80 @@ p, li, h1, h2, h3, a {
     margin: 0;
     font-size: 20px;
     color: #292D32;
+}
+
+.Card-shiftedTitle {
+    position: relative;
+    left: -50px;
+    width: fit-content;
+}
+
+.Card-width_1 {
+    grid-column: span 1 / span 1;
+}
+
+.Card-width_2 {
+    grid-column: span 2 / span 2;
+}
+
+.Card-width_3 {
+    grid-column: span 3 / span 3;
+}
+
+.Card-width_4 {
+    grid-column: span 4 / span 4;
+}
+
+.Card-width_5 {
+    grid-column: span 5 / span 5;
+}
+
+.Card-width_6 {
+    grid-column: span 6 / span 6;
+}
+
+.Card-width_7 {
+    grid-column: span 7 / span 7;
+}
+
+.Card-width_8 {
+    grid-column: span 8 / span 8;
+}
+
+.Card-width_9 {
+    grid-column: span 9 / span 9;
+}
+
+.Card-width_10 {
+    grid-column: span 10 / span 10;
+}
+
+.Card-width_11 {
+    grid-column: span 11 / span 11;
+}
+
+.Card-width_12 {
+    grid-column: span 12 / span 12;
+}
+
+.CardContainer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 60px 20px;
+}
+
+@media (max-width: 950px) {
+    .Card-body-right, .Card-body-left, .Card-image-right, .Card-image-left {
+        width: 45%;
+    }
+}
+
+@media (max-width: 888px) {
+    .Card-shiftedTitle {
+        left: 0;
+    }
+
+    .Card-width_1, .Card-width_2, .Card-width_3, .Card-width_4, .Card-width_5, .Card-width_6, .Card-width_7, .Card-width_8, .Card-width_9, .Card-width_10, .Card-width_11 {
+        grid-column: span 6 / span 6;
+    }
 }

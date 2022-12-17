@@ -35,10 +35,25 @@ class Card extends React.Component {
     static defaultProps = {
         className: '',
         imgPos: 'left',
+        width: 12,
     }
 
     constructor(props) {
         super(props);
+    }
+
+    updateLayout() {
+        this.setState({
+            
+        })
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.updateLayout);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateLayout);
     }
 
     render() {
@@ -46,7 +61,7 @@ class Card extends React.Component {
         // Для каждого расположения (top, right, bottom, left, none) определены особые стили в CSS-классах, оканчивающиеся на эти расположения
         return (
             <div 
-                className={`Card Card-${this.props.imgPos} ${this.props.className}`} 
+                className={`Card Card-${this.props.imgPos} Card-width_${this.props.width} ${this.props.className}`} 
                 style={{...this.props.style}}
             >
                 {

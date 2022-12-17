@@ -8,7 +8,7 @@ const AdmissionBacContent5 = () => {
             title="Про оплату обучения"
             imgSrc={Content5Img}
             imgPos='left'
-            style={{gridColumnStart: 1, gridColumnEnd: 4}}
+            width={12}
         >
             <h2>В Алтайском институте труда и права существует <a href='' style={{color: '#076DB1'}}>гибкая система оплаты</a> за обучение.</h2>
             <h3>Вы можете оплачивать свою учебу:</h3>

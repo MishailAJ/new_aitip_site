@@ -8,9 +8,9 @@ const AdmissionBacContent1 = () => {
             // Здесь нет пропа title, так как заголовок у данной карточки содержит ссылку. Пришлось вручную прописать h1 с ссылкой в её теле ниже.
             imgSrc={Content1Img}
             imgPos='left'
-            style={{gridColumnStart: 1, gridColumnEnd: 4}}
+            width={12}
         >
-            <h1 style={{position: 'relative', left: '-50px', width: '100vw'}}>Почему стоит поступать в <a href='' style={{color: '#076DB1'}}>АИТиП</a>?</h1>
+            <h1 className='Card-shiftedTitle'>Почему стоит поступать в <a href='' style={{color: '#076DB1'}}>АИТиП</a>?</h1>
             <h2>Потому что у нас:</h2>
             <ul className='Card-megaList'>
                 <li>ведущие <a href='' style={{color: '#076DB1'}}>преподаватели</a> региона</li> {/* TODO: заменить ссылки */}

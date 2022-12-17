@@ -2,23 +2,11 @@
     --bgcolor: #EEEEEE;
     --main_part_width: 60vw;
     --font_size_const: calc(0.1vw + 8px);
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    /* overflow-x: hidden;
-    width: 100vw;
-    background: var(--bgcolor); */
 }
 
 .rootContainer {
     background-color: var(--bgcolor);
-}
-
-.content2{
-    /* width: 100%; */
-    /* background: var(--bgcolor); */
-    /* justify-content: center;
-    align-items: center; */
+    width: 100%;
 }
 
 .title_choose_direction{

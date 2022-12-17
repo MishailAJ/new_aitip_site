@@ -11,11 +11,6 @@ class CardContainer extends React.Component {
         return (
             <div 
                 className="CardContainer"
-                style={{
-                    gridTemplateColumns: `repeat(${this.props.columns}, 1fr)`,
-                    display: 'grid',
-                    gap: '60px 20px',
-                }}
             >
                 {
                     this.props.children
