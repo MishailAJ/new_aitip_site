@@ -1,5 +1,5 @@
 import React from "react";
-import '../css/Card.css';
+import '../css/component_styles/Card.css';
 
 class CardContainer extends React.Component {
     constructor(props) {
@@ -7,7 +7,6 @@ class CardContainer extends React.Component {
     }
 
     render() {
-
         return (
             <div 
                 className="CardContainer"

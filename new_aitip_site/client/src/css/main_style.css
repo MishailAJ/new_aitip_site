@@ -9,6 +9,6 @@
     font-family: "Open Sans", sans-serif;
 }
 
-.root_component {
-    background-color: white;
+.rootContainer {
+    background-color: var(--bgcolor);
 }

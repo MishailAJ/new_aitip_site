@@ -1,6 +1,6 @@
 import React from "react";
 import FadingImg from "./FadingImg";
-import "../css/Card.css";
+import "../css/component_styles/Card.css";
 
 /** 
  * Компонент карточки с закруглёнными углами и местом для изображения (опционально).
@@ -50,7 +50,7 @@ class Card extends React.Component {
                 style={{...this.props.style}}
             >
                 {
-                    this.props.imgPos != 'none' &&
+                    this.props.imgPos !== 'none' &&
                     
                     <div className={`Card-image Card-image-${this.props.imgPos}`}> 
                     <FadingImg

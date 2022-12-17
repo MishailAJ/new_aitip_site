@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../../css/AdmissionBac.css"
+import "../../../css/page_styles/AdmissionBac.css"
 
 const AdmissionBacContent2 = () => {
     const specialties = ["директор и администратор предприятия",
@@ -42,7 +42,7 @@ const AdmissionBacContent2 = () => {
                     Менеджер (руководитель) профессионально занимается управлением организациями и социально-экономическими процессами в разных сферах и уровнях. Менеджер осуществляет весь спектр управленческих функций: организацию, планирование и стимулирование работы предприятия или его подразделений, координирует деятельность подчиненных, осуществляет контроль, оценивает и корректирует их работу, прогнозирует и предотвращает возможные риски. В компетенции менеджера также входит управление персоналом, материальное и нематериальное стимулирование работников, регулирование межличностных отношений в коллективе.
                 </div>
                 <div className="title_who_can_you_become">Кем ты можешь стать:</div>
-                <ul type="circle" style={{columnCount: col_count}} className="specialties">
+                <ul type="circle" className="specialties">
                     {specialties.map(el =>
                         <li className="specialty" key={el}>{el}</li>
                     )}
@@ -69,11 +69,11 @@ const AdmissionBacContent2 = () => {
                         </ul>
                     </div>
                     <div className="document">
-                        <img className="document_icon" src={"../asets/document_icon.png"}/>
+                        <img className="document_icon" src={"../assets/document_icon.png"}/>
                         <div>Правила проведения вступительных испытаний</div>
                     </div>
                     <div className="document">
-                        <img className="document_icon" src={"../asets/document_icon.png"}/>
+                        <img className="document_icon" src={"../assets/document_icon.png"}/>
                         <div>Расписание вступительных испытаний 2022</div>
                     </div>
                 </div>
