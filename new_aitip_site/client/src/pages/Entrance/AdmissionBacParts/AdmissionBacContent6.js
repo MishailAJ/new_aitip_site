@@ -39,6 +39,17 @@ const AdmissionBacContent6 = () => {
                         <p>Очень важный документ номер 6</p>
                     </div>
 
+                    <div className='Card-filesList-file'>
+                        <img src={Content6FileIcon}></img>
+                        <p>Очень важный документ номер 7</p>
+                    </div>
+
+
+                    <div className='Card-filesList-file'>
+                        <img src={Content6FileIcon}></img>
+                        <p>Очень важный документ номер 8</p>
+                    </div>
+
                 </div>
             </a>
         </Card>
