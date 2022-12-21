@@ -41,21 +41,7 @@ class Card extends React.Component {
     constructor(props) {
         super(props);
     }
-
-    updateLayout() {
-        this.setState({
-            
-        })
-    }
-
-    componentDidMount() {
-        window.addEventListener('resize', this.updateLayout);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.updateLayout);
-    }
-
+    
     render() {
 
         // Для каждого расположения (top, right, bottom, left, none) определены особые стили в CSS-классах, оканчивающиеся на эти расположения
@@ -69,14 +55,16 @@ class Card extends React.Component {
                     
                     <div className={`Card-image Card-image-${this.props.imgPos}`}> 
                     <FadingImg
-                            imgPos={this.props.imgPos}
-                            imgSrc={this.props.imgSrc}
+                        imgPos={this.props.imgPos}
+                        imgSrc={this.props.imgSrc}
                     /> 
                     </div>
                 }
                 <div className={`Card-body Card-body-${this.props.imgPos}`}>
                     {
-                        this.props.title && <h1>{this.props.title}</h1>
+                        this.props.title && 
+                        
+                        <h1>{this.props.title}</h1>
                     }
                     {this.props.children}
                 </div>

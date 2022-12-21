@@ -13,7 +13,7 @@ const AdmissionBac = () => {
         <div className='rootContainer'>
             <CardContainer>
                 <AdmissionBacContent1/>
-                <AdmissionBacContent2/>
+                {/* <AdmissionBacContent2/> */}
                 <AdmissionBacContent3/>
                 <AdmissionBacContent4/>
                 <AdmissionBacContent5/>
