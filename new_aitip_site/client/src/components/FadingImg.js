@@ -1,4 +1,5 @@
 import React from 'react';
+import "../css/component_styles/Card.css";
 
 /** 
  * Компонент исчезающей картинки.
@@ -26,10 +27,7 @@ class FadingImg extends React.Component {
         return (
             <img 
                 src={this.props.imgSrc} 
-                style={{
-                    WebkitMaskImage: `linear-gradient(to ${this.props.imgPos}, rgba(0,0,0,0), rgba(0,0,0,1) 60%)`,
-                    maskImage: `linear-gradient(to ${this.props.imgPos}, rgba(0,0,0,0), rgba(0,0,0,1) 60%)`
-                }}
+                className={`FadingImg-${this.props.imgPos}`}
             />
         );
     }
