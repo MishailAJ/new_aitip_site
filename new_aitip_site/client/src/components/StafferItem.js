@@ -7,7 +7,7 @@ import {observer} from "mobx-react-lite";
 
 const StafferItem = observer(({staffer}) => {
 
-    console.log(staffer)
+    console.log(staffer.name)
 
     return (
         <Col md={5} style={{margin: "10px", display: "inline-block", width: "200px"}}>

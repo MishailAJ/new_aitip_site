@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Students_APE = () => {
+const StudentsAdd = () => {
     return (
         <div>
             Students_APE
@@ -8,4 +8,4 @@ const Students_APE = () => {
     );
 };
 
-export default Students_APE;
+export default StudentsAdd;

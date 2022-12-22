@@ -1,6 +1,9 @@
 require("dotenv").config()
 const express = require("express")
 const sequelize = require("./db")
+const admission_models = require("./models/admissionModels")
+const moving_bar_models = require("./models/movingBarModels")
+const main_models = require("./models/staffModels")
 const PORT = process.env.PORT || 7000
 const cors = require("cors")
 const fileUpload = require("express-fileupload")

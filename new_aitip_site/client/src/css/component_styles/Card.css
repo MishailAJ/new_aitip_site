@@ -7,6 +7,7 @@ p, li, h1, h2, h3, a {
 .Card {
     background-color: #FFFFFF;
     display: flex;
+    flex-direction: column;
     border-radius: 10px;
 }   
 
@@ -55,8 +56,8 @@ p, li, h1, h2, h3, a {
 }
 
 .Card-body-right {
-    height: 50%;
-    width: 100%;
+    width: 50%;
+    height: 100%;
     padding: 20px 0 40px 34px;
 }
 
@@ -87,16 +88,14 @@ p, li, h1, h2, h3, a {
     font-size: 30px;
     font-style: normal;
     font-weight: 700;
-    font-size: 30px;
     line-height: 41px;
     word-wrap: normal;
 }
 
 .Card-body h2 {
-    margin: 10px 0;
     font-size: 24px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin: 10px 0 30px;
 }
 
 .Card-body h3 {

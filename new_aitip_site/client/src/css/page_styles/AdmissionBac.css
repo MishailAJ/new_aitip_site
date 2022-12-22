@@ -1,43 +1,45 @@
-.title_choose_direction{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: var(--main_part_width);
-    height: auto;
-    margin: 0 calc((100% - var(--main_part_width)) * 0.5);
-    padding: 0;
-    font-style: normal;
-    font-weight: 500;
-    font-size: calc(var(--font_size_const) * 2);
-    justify-content: center;
-    align-items: center;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+.content2 .Card-body, .content2 .Card-body-none{
+    --content2_padding: 5%;
+    padding: 2% var(--content2_padding);
+}
+
+.content2 .Card-body p, .content2 .Card-body li{
+    font-size: var(--font_size_const);
+}
+
+.content2 .Card-body h1.local_title{
+    margin: 0;
     text-align: center;
     background: #FFFFFF;
 }
 
-.title_choose_direction div {
-    margin: 0 5px;
-    float: left;
-    width: auto;
-    background-color: #FFFFFF;
+.content2 .Card-body p.local_title{
+    padding: 3px;
+    font-weight: 600;
+    text-align: center;
+    background: #FFFFFF;
 }
 
 .tracks {
     display: flex;
+    width: 112%;
     flex-direction: row;
     flex-wrap: wrap;
-    width: var(--main_part_width);
-    margin: 0 calc((100% - var(--main_part_width)) * 0.5);
-    padding: 0;
+    margin: 0 -6% 0 -6%;
+    padding: 0 10px;
     justify-content: center;
     text-align: center;
+    background-color: var(--bgcolor);
 }
 
 .tracks li {
     display: flex;
-    width: auto;
     max-width: 280px;
     height: 80px;
+    margin: 0 auto;
     padding: 0;
     justify-content: center;
     align-items: center;
@@ -48,8 +50,7 @@
 
 .tracks li button {
     display: inline-block;
-    width: 100%;
-    height: 70px;
+    height: 100%;
     padding: 0 8px;
     text-align: center;
     border-radius: 10px;
@@ -66,9 +67,30 @@
     font-weight: 500;
 }
 
+.content2 .Card-image{
+    height: auto;
+}
+
+.direction_inner_card{
+    margin: 0 -6% 0 0;
+    width: 105%;
+    padding: 0;
+}
+
+.direction_inner_card .Card-body-right, .direction_inner_card .Card-body{
+    margin: 0;
+    padding: 0;
+}
+
+.content2 .Card-body .direction_inner_card :is(h1, h3) {
+    margin: 20px 0;
+}
+
+.direction_inner_card .Card-image img{
+    border-radius: 0;
+}
+
 .direction_block {
-    width: var(--main_part_width);
-    margin: 0 calc((100% - var(--main_part_width)) * 0.5);
     justify-content: center;
     align-items: center;
     background: white;
@@ -77,8 +99,7 @@
 .extended_description {
     -ms-hyphens: auto;
     display: flex;
-    width: auto;
-    margin: calc(var(--main_part_width) * 0.03) calc(var(--main_part_width) * 0.06);
+    margin: 30px 0;
     padding: 5px 10px;
     border-radius: 10px;
     background: var(--bgcolor);
@@ -87,38 +108,21 @@
     font-size: calc(var(--font_size_const) * 1.3);
 }
 
-.title_who_can_you_become{
+.content2 .Card-body .title_who_can_you_become{
     display: flex;
-    width: var(--main_part_width);
-    margin: calc(var(--main_part_width) * 0.01) calc(var(--main_part_width) * 0.06);
+    margin: 5px ;
     justify-content: left;
-    font-weight: 500;
-    font-size: calc(var(--font_size_const) * 1.5);
+    font-weight: 600;
+    font-size: calc(var(--font_size_const) * 1.1);
     background: white;
 }
 
-@media (max-width: 399px) {
-    .specialties{
-        column-count: 1;
-    }
-}
-
-@media (min-width: 400px) and (max-width: 629px) {
-    .specialties{
-        column-count: 2;
-    }
-}
-
-@media (min-width: 630px) {
-    .specialties{
-        column-count: 3;
-    }
-}
 .specialties {
-    list-style-type: disc;
-    width: var(--main_part_width);
-    margin: calc(var(--main_part_width) * 0.01) calc(var(--main_part_width) * 0.04);
-    padding: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-width: calc(calc(100% - var(--content2_padding) * 2 - 120px) * 0.33);
+    padding: 8px 0 8px 40px;
+    gap: 0 40px;
     background: white;
 }
 
@@ -126,10 +130,148 @@
     background: white;
     margin: 0;
     padding: calc(var(--main_part_width) * 0.01);
-    width: auto;
-    max-width: 220px;
     height: auto;
     justify-content: left;
     align-content: flex-start;
     font-size: calc(var(--font_size_const) * 1.5);
+}
+
+
+.points_and_2_documents{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 5px;
+}
+
+.passing_points {
+    border: 3px solid;
+    border-radius: 10px;
+    width: 35%;
+    min-width: 300px;
+    max-width: 450px;
+    margin: 10px 2% 10px 0;
+    padding: 5px 10px;
+}
+
+.passing_points ol{
+    padding: 0 20px;
+}
+
+._2_documents{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 25%;
+    min-width: 200px;
+}
+
+._1_of_first_2_documents{
+    display: flex;
+    margin: 30px 0;
+    flex-direction: row;
+    align-items: center;
+}
+
+.document_icon{
+    width: var(--document_icon_size);
+    height: var(--document_icon_size);
+    margin: 0 10px 0 0;
+}
+
+.cost_zone{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.content2 .Card-body .cost{
+    width: auto;
+    max-width: 250px;
+    margin: 0 auto 5px;
+    text-align: center;
+}
+
+.content2 .Card-body .cost p{
+    margin: 5px 0;
+}
+
+.content2 .Card-body .cost .cost_price{
+     font-size: calc(var(--font_size_const) * 1.5);
+}
+
+.direction_block .last_document_of_content_2{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    align-items: center;
+    width: 95%;
+}
+
+.direction_block .last_document_of_content_2 p{
+    margin: 0;
+}
+
+
+/* MEDIA */
+
+
+/* При исчезновении боковых зон */
+@media (max-width: 800px){
+
+}
+
+/* Количество и размер столбцов блока "Кем ты можешь стать" */
+@media (max-width: 666px) {
+    .specialties{
+        grid-template-columns: 1fr;
+        column-width: calc(100% - var(--content2_padding) * 2 - 40px);
+    }
+}
+
+@media (min-width: 667px) and (max-width: 1050px) {
+    .specialties{
+        grid-template-columns: 1fr 1fr;
+        column-width: calc(calc(100% - var(--content2_padding) * 2 - 80px) * 0.5);
+    }
+}
+
+/* Когда 2 документа, находящиеся рядом с проходными баллами, падают вниз */
+@media (max-width: 1758px) {
+    .passing_points{
+        width: 45%;
+        margin: 10px 2%;
+    }
+    ._2_documents{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    ._1_of_first_2_documents{
+        width: 40%;
+        margin: 15px 5%;
+    }
+}
+
+/* Когда 2 блока проходных баллов становятся не на 1 строке */
+@media (max-width: 1437px) {
+    .passing_points{
+        width: 100%;
+        margin: 10px 0;
+        max-width: 700px;
+    }
+}
+
+/* Когда 2 документа не помещаются на 1 строке */
+@media (max-width: 1030px) {
+    ._2_documents{
+        flex-direction: column;
+    }
+    ._1_of_first_2_documents{
+        width: 95%;
+    }
 }

@@ -3,7 +3,7 @@
 
 const uuid = require("uuid")
 const path = require("path")
-const {Staffer} = require("../models/models")
+const {Staffer} = require("../models/staffModels")
 const ApiError = require("../error/ApiError")
 const { Op } = require('sequelize')
 
@@ -35,37 +35,38 @@ class StaffController {
         let staff;
 
         if (!post && !academic_degree && !letter) {
-            staff = await Staffer.findAndCountAll({limit, offset})
+            staff = await Staffer.findAndCountAll({limit, offset, order: [
+                ['name']]})
             console.log("staffController, f getAll noParams")
         }
         if (!post && !academic_degree && letter) {
             staff = await Staffer.findAndCountAll({where: {name: {
                 [Op.like]: `${letter}%`
-            }}, limit, offset})
+            }}, limit, offset, order: [['name']]})
         }
         if (!post && academic_degree && !letter) {
-            staff = await Staffer.findAndCountAll({where: {academic_degree}, limit, offset})
+            staff = await Staffer.findAndCountAll({where: {academic_degree}, limit, offset, order: [['name']]})
         }
         if (post && !academic_degree && !letter) {
-            staff = await Staffer.findAndCountAll({where: {post}, limit, offset})
+            staff = await Staffer.findAndCountAll({where: {post}, limit, offset, order: [['name']]})
         }
         if (!post && academic_degree && letter) {
             staff = await Staffer.findAndCountAll({where: {name: {
                         [Op.like]: `${letter}%`
-                    }, academic_degree}, limit, offset})
+                    }, academic_degree}, limit, offset, order: [['name']]})
         }
         if (post && !academic_degree && letter) {
             staff = await Staffer.findAndCountAll({where: {name: {
                         [Op.like]: `${letter}%`
-                    }, post}, limit, offset})
+                    }, post}, limit, offset, order: [['name']]})
         }
         if (post && academic_degree && !letter) {
-            staff = await Staffer.findAndCountAll({where: {post, academic_degree}, limit, offset})
+            staff = await Staffer.findAndCountAll({where: {post, academic_degree}, limit, offset, order: [['name']]})
         }
         if (post && academic_degree && letter) {
             staff = await Staffer.findAndCountAll({where: {name: {
                         [Op.like]: `${letter}%`
-                    }, academic_degree, post}, limit, offset})
+                    }, academic_degree, post}, limit, offset, order: [['name']]})
         }
         return res.json(staff)
     }

@@ -8,7 +8,7 @@ const Staffer = sequelize.define("staffer", {
         id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
         name: {type: DataTypes.STRING, unique: true, allowNull: false},
         post: {type: DataTypes.STRING, allowNull: false},
-        academic_degree: {type: DataTypes.STRING, allowNull: false},
+        academic_degree: {type: DataTypes.STRING},
         // photo: {type: DataTypes.STRING, allowNull: false},
         // subjects: {type: DataTypes.STRING, allowNull: false},
         // add_prof_edu: {type: DataTypes.STRING, allowNull: false, defaultValue: "-"},
@@ -25,6 +25,5 @@ const Staffer = sequelize.define("staffer", {
         // projects: {type: DataTypes.STRING, allowNull: false}
     }
 )
-
 
 module.exports = {Staffer}

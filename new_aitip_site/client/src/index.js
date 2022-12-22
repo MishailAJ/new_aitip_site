@@ -4,8 +4,8 @@
 import ReactDOM from "react-dom";
 import App from "./App";
 import {createContext} from "react";
-import UserStore from "./store/UserStore";
 import StaffStore from "./store/StaffStore";
+import AdmissionStore from "./store/AdmissionStore";
 
 
 export const Context = createContext(null)
@@ -13,8 +13,8 @@ console.log(process.env.REACT_APP_API_URL)
 
 ReactDOM.render(
     <Context.Provider value={{
-        user: new UserStore(),
-        staff_store: new StaffStore()
+        staff_store: new StaffStore(),
+        admission_store: new AdmissionStore()
     }}>
         <App />
     </Context.Provider>,

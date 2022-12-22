@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Inter_act = () => {
+const LegalClinic = () => {
     return (
         <div>
-            Inter_act
+            Legal_c
         </div>
     );
 };
 
-export default Inter_act;
+export default LegalClinic;

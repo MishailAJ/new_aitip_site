@@ -16,10 +16,8 @@ const PersonalitiesPage = observer(() => {
             fetchStaff(null, null, null, 1, 10).then(data => {
                     staff_store.setStaff(data.rows)
                     staff_store.setTotalCount(data.count)
-                    console.log(1)
                 }
             )
-            console.log("ue1")
             console.log(staff_store.staff)
     }, [])
 
@@ -28,9 +26,7 @@ const PersonalitiesPage = observer(() => {
             fetchStaff(staff_store.selectedLetter.id, staff_store.selectedPost.id, staff_store.selectedAcademic_degree, staff_store.page, staff_store.limit).then(data => {
                 staff_store.setStaff(data.rows)
                 staff_store.setTotalCount(data.count)
-                console.log(2)
             })
-            console.log("ue2")
         })()
     }, [staff_store, staff_store.page, staff_store.selectedLetter, staff_store.selectedPost, staff_store.selectedAcademic_degree])
 
