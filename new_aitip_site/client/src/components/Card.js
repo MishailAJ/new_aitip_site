@@ -12,21 +12,22 @@ import "../css/component_styles/Card.css";
         title="Card title"
         imgSrc={ImportedImage}
         imgPos="left"
-        style={{gridColumnStart: 1, gridColumnEnd: 3}}
+        width={3}
     >
         <p>Card text</p>
     </Card>
  * ```
  * Данный код задаёт карточку с заголовком "Card title", изображением ImportedImage, расположенным слева ("left"). 
- * Причём эта карточка при помещении её в CardContainer будет занимать 1 и 2 столбцы грида 
+ * Причём эта карточка при помещении её в CardContainer будет иметь ширину, равную 3-ём столбцам грида,
  * и у неё будет дополнительный CSS-класс `.FeedbackPage-bigCard`.
  * 
  * Props:
- * @param {string} title - заголовок карточки (помещается в стилизованный <h1>).
- * @param {Object | string} imgSrc - изображение, которое помещается в отведённое для него место (либо импортированное, либо путь к нему). Можно не указывать, если imgPos="none".
- * @param {"left" | "right" | "top" | "bottom", "none"} imgPos - позиция изображения в карточке (top, right, bottom, left, none). imgPos="none" указывает на отсутствие изображения.
  * @param {string} className - CSS-класс для корневого div карточки.  
- * @param {Object} style - дополнительные стили. Также здесь указывается столбцы грида, в которых должна размещаться карточка (пока это не реализовано по-другому).  
+ * @param {string} title - заголовок карточки (помещается в стилизованный <h1>).
+ * @param {File | string} imgSrc - изображение, которое помещается в отведённое для него место (либо импортированное, либо путь к нему). Можно не указывать, если imgPos="none".
+ * @param {"left" | "right" | "top" | "bottom" | "none"} imgPos - позиция изображения в карточке (top, right, bottom, left, none). imgPos="none" указывает на отсутствие изображения.
+ * @param {int} width - сколько столбцов грида должна занимать карточка (число от 1 до 12).
+ * @param {Object} style - дополнительные стили
 */
 class Card extends React.Component {
     // TODO: сделать компонент ColoredText, который будет брать цвет для текста из пропа primaryColor своей карточки
@@ -41,21 +42,7 @@ class Card extends React.Component {
     constructor(props) {
         super(props);
     }
-
-    updateLayout() {
-        this.setState({
-            
-        })
-    }
-
-    componentDidMount() {
-        window.addEventListener('resize', this.updateLayout);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.updateLayout);
-    }
-
+    
     render() {
 
         // Для каждого расположения (top, right, bottom, left, none) определены особые стили в CSS-классах, оканчивающиеся на эти расположения
@@ -69,14 +56,16 @@ class Card extends React.Component {
                     
                     <div className={`Card-image Card-image-${this.props.imgPos}`}> 
                     <FadingImg
-                            imgPos={this.props.imgPos}
-                            imgSrc={this.props.imgSrc}
+                        imgPos={this.props.imgPos}
+                        imgSrc={this.props.imgSrc}
                     /> 
                     </div>
                 }
                 <div className={`Card-body Card-body-${this.props.imgPos}`}>
                     {
-                        this.props.title && <h1>{this.props.title}</h1>
+                        this.props.title && 
+                        
+                        <h1>{this.props.title}</h1>
                     }
                     {this.props.children}
                 </div>
