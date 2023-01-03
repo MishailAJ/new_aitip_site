@@ -18,7 +18,7 @@ const DirectionBachelor = sequelize.define("direction_bachelor", {
 })
 
 
-const EntranceTests = sequelize.define("entrance_tests", {
+const EntranceTest = sequelize.define("entrance_test", {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     subject: {type: DataTypes.STRING, allowNull: false},
     min_points: {type: DataTypes.INTEGER, allowNull: false},
@@ -27,10 +27,10 @@ const EntranceTests = sequelize.define("entrance_tests", {
 
 //RELATION
 
-DirectionBachelor.hasMany(EntranceTests,{as: "tests"})
-EntranceTests.belongsTo(DirectionBachelor)
+DirectionBachelor.hasMany(EntranceTest,{as: "tests"})
+EntranceTest.belongsTo(DirectionBachelor)
 
-module.exports = {DirectionBachelor, EntranceTests}
+module.exports = {DirectionBachelor, EntranceTest}
 
 /*
 const Device = sequelize.define("device", {

@@ -11,107 +11,168 @@ import {observer} from "mobx-react-lite";
 import {createStaffer} from "../../http/staffAPI";
 
 const CreateStaff = observer(({show, onHide}) => {
-    const {staff} = useContext(Context)
+    const {admission_store} = useContext(Context)
+
     const [name, setName] = useState("")
     const [post, setPost] = useState("")
-    const [academic_degree, setAcademic_degree] = useState("")
+    const [academicDegree, setAcademicDegree] = useState("")
+    const [academicTitle, setAcademicTitle] = useState("");
+    const [directionsBac, setDirectionsBac] = useState([]);
+    const [programsAdd, setProgramsAdd] = useState([]);
+    const [bio, setBio] = useState("");
+    const [disciplinesAndCourses, setDisciplinesAndCourses] = useState("");
+    const [publications, setPublications] = useState("");
+    const [projects, setProjects] = useState("");
+    const [email, setEmail] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [adress, setAdress] = useState("");
     const [file, setFile] = useState(null)
-    const [info, setInfo] = useState([])
 
-    const addInfo = () => {
-        setInfo([...info, {title: "", description: "", number: Date.now()}])
+    const addDirection = () => {
+        setDirectionsBac([...directionsBac, {name: "", number: Date.now()}])
+        console.log(directionsBac)
     }
-    const removeInfo = (number) => {
-        setInfo(info.filter(i => i.number !== number))
+
+    const addProgram = () => {
+        setProgramsAdd([...programsAdd, {name: "", number: Date.now()}])
+        console.log(programsAdd)
     }
+
+    const removeDirection = (number) => {
+        setDirectionsBac(directionsBac.filter(i => i.number !== number))
+    }
+
+    const removeProgram = (number) => {
+        setProgramsAdd(programsAdd.filter(i => i.number !== number))
+    }
+
 
     const selectFile = e => {
         setFile(e.target.files[0])
     }
 
-    const changeInfo = (key, value, number) => {
-        setInfo(info.map(i => i.number === number ? {...i, [key]: value} : i))
-    }
-
     const addStaffer = () => {
         const formData = new FormData()
+        console.log(bio, publications, disciplinesAndCourses, projects)
+        Object.keys(formData).forEach(k => console.log(formData.getAll(k)))
         formData.append("name", name)
-        formData.append("price", `${price}`)
+        formData.append("post", post)
+        formData.append("academic_degree", academicDegree)
+        formData.append("academic_title", academicTitle)
+        formData.append("subjects_bac", JSON.stringify(directionsBac))
+        formData.append("subjects_add", JSON.stringify(programsAdd))
+        formData.append("bio_text", bio)
+        formData.append("disciplines_and_courses_text", disciplinesAndCourses)
+        formData.append("publications_text", publications)
+        formData.append("projects_text", projects)
+        formData.append("email", email)
+        formData.append("phone_number", phoneNumber)
+        formData.append("adress", adress)
         formData.append("img", file)
-        formData.append("info", JSON.stringify(info))
         createStaffer(formData).then(() => onHide())
     }
 
-    useEffect(() => {
-        fetchTypes().then(data =>
-            device.setTypes(data)
-        )
-        fetchBrands().then(data =>
-            device.setBrands(data)
-        )
-        fetchDevices().then(data =>
-            device.setDevices(data.rows)
-        )
-    }, [])
-
     return (
         <Modal show={show} onHide={onHide}>
-            <Modal.Header closeButton>
-                <Modal.Title>Добавление устройства</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <Form>
-                    <Row>
-                        <Dropdown className="m-2" style={{display: "flex", width: "40%"}}>
-                            <DropdownToggle>{device.selectedType.name || "Выберите тип"}</DropdownToggle>
-                            <DropdownMenu>
-                                {device.types.map(type =>
-                                    <DropdownItem onClick={() => device.setSelectedType(type)} key={type.id}>{type.name}</DropdownItem>
-                                )}
-                            </DropdownMenu>
-                        </Dropdown>
-                        <Dropdown className="m-2" style={{display: "flex", width: "40%"}}>
-                            <DropdownToggle>{device.selectedBrand.name || "Выберите бренд"}</DropdownToggle>
-                            <DropdownMenu>
-                                {device.brands.map(brand =>
-                                    <DropdownItem onClick={() => device.setSelectedBrand(brand)} key={brand.id}>{brand.name}</DropdownItem>
-                                )}
-                            </DropdownMenu>
-                        </Dropdown>
-                    </Row>
+            <form>
+                <fieldset>
+                    <div>
+                        <label htmlFor="name">Имя</label>
+                        <input type="name" id="name" onChange={e => setName(e.target.value)}/>
+                    </div>
+                    <div>
+                        <label htmlFor="post">Должность</label>
+                        <input type="text" id="post" onChange={e => setPost(e.target.value)}/>
+                    </div>
+                    <div>
+                        <label htmlFor="academic_degree">Академическая степень</label>
+                        <input type="text" id="academic_degree" onChange={e => setAcademicDegree(e.target.value)}/>
+                    </div>
+                    <div>
+                        <label htmlFor="academic_title">Академическое звание</label>
+                        <input type="text" id="academic_title" onChange={e => setAcademicTitle(e.target.value)}/>
+                    </div>
 
-                    <Row>
-                        <FormControl className="mt-3" placeholder="Название" value={name} onChange={e => setName(e.target.value)}/>
-                        <FormControl className="mt-3" placeholder="Цена" type="number" value={price} onChange={e => setPrice(Number(e.target.value))}/>
-                        <FormControl className="mt-3" type="file" onChange={selectFile}/>
-                    </Row>
-                    <hr/>
-                    <Button variant="outline-info" onClick={addInfo}>
-                        Добавить новое свойство
-                    </Button>
-                    {info.map(i =>
-                        <Row key={i.number} className="mt-3">
-                            <Col md={4}>
-                                <FormControl placeholder="Название характеристики" value={i.title} onChange={e => changeInfo("title", e.target.value, i.number)}/>
-                            </Col>
-                            <Col md={4}>
-                                <FormControl placeholder="Значение характеристики" value={i.description} onChange={e => changeInfo("description", e.target.value, i.number)}/>
-                            </Col>
-                            <Col md={4}>
-                                <Button variant="outline-danger" onClick={() => removeInfo(i.number)}>Удалить</Button>
-                            </Col>
-                        </Row>
-                    )}
-                </Form>
-            </Modal.Body>
-            <Modal.Footer>
-                <Button variant="outline-danger" onClick={onHide}>
-                    Закрыть
-                </Button>
-                <Button variant="outline-success" onClick={addDevice}>
-                    Добавить устройство
-                </Button>
-            </Modal.Footer>
+                    <div>
+                        <label htmlFor="subjects_bac">Направления бакалавариата, у которых преподает</label>
+                        <textarea style={{width: 400, height: 100}} id="subjects_bac"
+                                  onChange={e => setDirectionsBac(e.target.value.split(", "))}/>
+                    </div>
+                    <div>
+                        <label htmlFor="subjects_add">Программы ДПО, у которых преподает</label>
+                        <textarea style={{width: 400, height: 100}} id="subjects_add"
+                                  onChange={e => setProgramsAdd(e.target.value.split(", "))}/>
+                    </div>
+                    <label htmlFor="directions_bachelor">Направления бакалавриата, на которых преподает сотрудник</label>
+                    <div id="directions_bachelor">
+                        {admission_store.directions_bachelor.map(d =>
+                            <div key={d.id}>
+                                <input id={d.id} type="checkbox" value="0" name={d.name}/>
+                                <label htmlFor={d.id}>{d.name}</label>
+                            </div>
+                        )}
+                    </div>
+                    <label htmlFor="programs_additional">Направления бакалавриата, на которых преподает сотрудник</label>
+                    <div id="programs_additional">
+                        {admission_store.programs_additional.map(d =>
+                            <div key={d.id}>
+                                <input id={d.id} type="checkbox" value="0" name={d.name}/>
+                                <label htmlFor={d.id}>{d.name}</label>
+                            </div>
+                        )}
+                    </div>
+                    <div>
+                        <label htmlFor="bio_text">Биография (текст)</label>
+                        <textarea style={{width: 400, height: 100}} id="bio_text"
+                                  onChange={e => setBio(e.target.value)}/>
+                    </div>
+                    <div>
+                        <label htmlFor="disciplines_and_courses_text">Дисциплины и курсы (текст)</label>
+                        <textarea style={{width: 400, height: 100}} id="disciplines_and_courses_text"
+                                  onChange={e => setDisciplinesAndCourses(e.target.value)}/>
+                    </div>
+                    <div>
+                        <label htmlFor="publications_text">Публикации (текст)</label>
+                        <textarea style={{width: 400, height: 100}} id="publications_text"
+                                  onChange={e => setPublications(e.target.value)}/>
+                    </div>
+
+                    <div>
+                        <label htmlFor="projects_text">Проекты (текст)</label>
+                        <textarea style={{width: 400, height: 100}} id="projects_text"
+                                  onChange={e => setProjects(e.target.value)}/>
+                    </div>
+                    <div>
+                        <label htmlFor="email">Почта</label>
+                        <input type="text" id="email" onChange={e => setEmail(e.target.value)}/>
+                    </div>
+                    <div>
+                        <label htmlFor="phone_number">Номер телефона</label>
+                        <input type="text" id="phone_number" onChange={e => setPhoneNumber(e.target.value)}/>
+                    </div>
+                    <div>
+                        <label htmlFor="adress">Адрес</label>
+                        <input type="text" id="adress" onChange={e => setAdress(e.target.value)}/>
+                    </div>
+
+                    <div>
+                        <label htmlFor="img">Картинка</label>
+                        <input type="file" id="img" onChange={e => selectFile(e)}/>
+                    </div>
+
+                    <footer style={{margin: "0 0 50px"}}>
+                        <Button variant="outline-danger" onClick={onHide}>
+                            Закрыть
+                        </Button>
+                        <Button variant="outline-success" onClick={() => {
+                            addStaffer()
+                        }}>
+                            Добавить сотрудника
+                        </Button>
+                    </footer>
+                    <p>*Костыль ради отступа*</p>
+                </fieldset>
+            </form>
         </Modal>
     );
 });

@@ -4,6 +4,8 @@
 const Router = require("express")
 const router = new Router()
 const staffController = require("../controllers/staffController")
+const checkRole = require("../middleware/checkRoleMiddleware")
+
 
 router.post("/", staffController.create)
 router.get("/", staffController.getAll)

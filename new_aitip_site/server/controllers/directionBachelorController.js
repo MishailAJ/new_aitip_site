@@ -4,38 +4,52 @@
 const uuid = require("uuid")
 const path = require("path")
 const ApiError = require("../error/ApiError")
-const {DirectionBachelor, EntranceTests} = require("../models/admissionModels");
+const {DirectionBachelor, EntranceTest} = require("../models/admissionModels");
+
 
 
 class DirectionBachelorController {
     async create(req, res, next) {
+        console.log("Я в create")
         try{
             let {name, code, profile, profession_advantages, profession_description,
                 specialities, extramural_form_price, full_and_part_time_form_price, tests} = req.body
+            console.log("Получил данные из запроса")
             const {img} = req.files
             let fileName = uuid.v4() + ".jpg"
             await img.mv(path.resolve(__dirname, "..", "static", fileName))
-            console.log(specialities)
+            console.log("Обработал в удобный мне формат")
+            console.log(name, code, profile, profession_advantages, profession_description, specialities, extramural_form_price, full_and_part_time_form_price, fileName)
+            console.log(typeof JSON.parse(specialities), JSON.parse(specialities))
+            const splitedSpecialities = JSON.parse(specialities)
+            
+            let values = {name, code, profile, profession_advantages, profession_description, specialities: splitedSpecialities, extramural_form_price, full_and_part_time_form_price, img: fileName
+            }
+            console.log(typeof values, typeof specialities)
 
-            const directionBachelor = await DirectionBachelor.create({name, code, profile, profession_advantages, profession_description, specialities, extramural_form_price, full_and_part_time_form_price, img: fileName
-            })
+            const directionBachelor = await DirectionBachelor.create(values)
+            console.log("Создал новое направление")
 
             if (tests) {
                 tests = JSON.parse(tests)
-                tests.forEach(i =>
-                    EntranceTests.create({
-                        subject: i.subject,
-                        min_points: i.min_points,
-                        isNecessary: i.isNecessary,
-                        directionBacheloreId: directionBachelor.id
+                tests.forEach(test =>
+                    EntranceTest.create({
+                        subject: test.subject,
+                        min_points: test.minPoints,
+                        isNecessary: test.isNecessary,
+                        directionBachelorId: directionBachelor.id
                     })
                 )
             }
+
+            console.log("Обработал тесты")
 
             return res.json(directionBachelor)
         } catch (e) {
             next(ApiError.badRequest(e.message))
         }
+        console.log("Функция закончила свою работу")
+
     }
 
     async getAll(req, res) {
@@ -49,9 +63,11 @@ class DirectionBachelorController {
     }
 
     async getOne(req, res) {
-        const {name} = req.params
+        const {id} = req.params
+        console.log("Я в getOne")
         const direction = await DirectionBachelor.findOne({
-            where: {name},
+            where: {id},
+            include: [{model: EntranceTest, as: "tests"}]
         })
         return res.json(direction)
     }
