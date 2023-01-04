@@ -9,7 +9,7 @@ const AdmissionBacContent4 = () => {
             imgSrc={Content4Img}
             imgPos='bottom'
             width={4}
-            style={{minHeight: '460px', height: '26vmax'}}
+            // style={{minHeight: '460px', height: '26vmax'}}
         >
             <h1>Важные <a href='' style={{color: '#AD4820'}}>даты</a></h1>
             <p>
