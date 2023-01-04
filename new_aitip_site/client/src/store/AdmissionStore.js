@@ -7,11 +7,13 @@ export default class AdmissionStore {
         this._selectedDirections_bachelor_name = 0
         this._programs_additional = [
             {
+                id: 1,
                 name: "Оценка стоимости предприятия (бизнеса)",
                 price: 50000,
                 supervisor: "Самсонов Р.А."
             },
             {
+                id: 2,
                 name: "Менеджмент в кадровой сфере",
                 price: 45000,
                 supervisor: "Петров А.И."

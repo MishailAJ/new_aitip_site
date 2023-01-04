@@ -1,16 +1,13 @@
 import React, {useContext, useEffect, useState} from 'react';
-import Personalities from "../../components/PersonalitiesList";
 import {Col, Container, Row} from "react-bootstrap";
-import TypeBar from "../../components/TypeBar";
+import TypeBar from "../../components/personalities/TypeBar";
 import {Context} from "../../index";
 import {fetchStaff} from "../../http/staffAPI";
 import {observer} from "mobx-react-lite";
-import PersonalitiesList from "../../components/PersonalitiesList";
+import PersonalitiesList from "../../components/personalities/PersonalitiesList";
 
 const PersonalitiesPage = observer(() => {
-    console.log("PersonalitiesPage")
     const {staff_store} = useContext(Context)
-    console.log("")
 
     useEffect(() => {
             fetchStaff(null, null, null, 1, 10).then(data => {
@@ -40,7 +37,7 @@ const PersonalitiesPage = observer(() => {
                     </div>
                 </Col>
                 <Col md={10} style={{display: "inline-block", width: "70vw", left: 0}}>
-                    <div style={{width: "70vw"}}>
+                    <div style={{width: "70%"}}>
                         <PersonalitiesList/>
                     </div>
                 </Col>

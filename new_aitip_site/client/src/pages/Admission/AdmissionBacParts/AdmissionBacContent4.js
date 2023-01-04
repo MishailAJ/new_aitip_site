@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../../../components/Card';
+import Card from '../../../components/card/Card';
 import Content4Img from '../../../local_assets/Content4_photo.png';
 
 const AdmissionBacContent4 = () => {

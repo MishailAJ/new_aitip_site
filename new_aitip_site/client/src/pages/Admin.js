@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {Button, Container} from "react-bootstrap";
-import CreateDirection from "../components/modals/CreateDirection";
-import CreateStaff from "../components/modals/CreateStaff";
+import CreateDirection from "../components/admin_panels/CreateDirection";
+import CreateStaff from "../components/admin_panels/CreateStaff";
 import {fetchDirectionsBachelor} from "../http/admissionAPI";
 import {Context} from "../index";
 

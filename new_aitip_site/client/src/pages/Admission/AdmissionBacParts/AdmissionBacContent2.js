@@ -1,8 +1,7 @@
 import React, {useContext, useEffect, useMemo, useState} from 'react';
-import Card from '../../../components/Card';
+import Card from '../../../components/card/Card';
 import "../../../css/page_styles/AdmissionBac.css"
-import Content2Img from '../../../local_assets/Content2_photo.png';
-import {fetchDirectionsBachelor, fetchOneDirectionBachelor} from "../../../http/admissionAPI";
+import {fetchOneDirectionBachelor} from "../../../http/admissionAPI";
 import {observer} from "mobx-react-lite";
 import {Context} from "../../../index";
 

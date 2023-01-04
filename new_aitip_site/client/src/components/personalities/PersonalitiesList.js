@@ -3,7 +3,7 @@
 import React, {useContext} from 'react';
 
 import {Row} from "react-bootstrap";
-import {Context} from "../index";
+import {Context} from "../../index";
 import StafferItem from "./StafferItem";
 import {observer} from "mobx-react-lite";
 

@@ -1,12 +1,9 @@
 // Frontend модального окна для добавления сотрудника и функции, изменяющие состояния(установлено в модальном окне определенное значение или нет). Возможно, не будет использоваться.
 
 
-import React, {useContext, useEffect, useState} from 'react';
-import {Button, Col, Dropdown, Form, FormControl, Modal, Row} from "react-bootstrap";
+import React, {useContext, useState} from 'react';
+import {Button, Modal} from "react-bootstrap";
 import {Context} from "../../index";
-import DropdownToggle from "react-bootstrap/DropdownToggle";
-import DropdownMenu from "react-bootstrap/DropdownMenu";
-import DropdownItem from "react-bootstrap/DropdownItem";
 import {observer} from "mobx-react-lite";
 import {createStaffer} from "../../http/staffAPI";
 
@@ -28,24 +25,29 @@ const CreateStaff = observer(({show, onHide}) => {
     const [adress, setAdress] = useState("");
     const [file, setFile] = useState(null)
 
-    const addDirection = () => {
-        setDirectionsBac([...directionsBac, {name: "", number: Date.now()}])
+    const addDirection = (directionName) => {
+        console.log(directionName)
+        setDirectionsBac([...directionsBac, directionName])
         console.log(directionsBac)
     }
 
-    const addProgram = () => {
-        setProgramsAdd([...programsAdd, {name: "", number: Date.now()}])
+    const removeDirection = (directionName) => {
+        console.log(directionName)
+        setDirectionsBac(directionsBac.filter(i => i !== directionName))
+        console.log(directionsBac)
+    }
+
+    const addProgram = (programName) => {
+        console.log(programName)
+        setProgramsAdd([...programsAdd, programName])
         console.log(programsAdd)
     }
 
-    const removeDirection = (number) => {
-        setDirectionsBac(directionsBac.filter(i => i.number !== number))
+    const removeProgram = (programName) => {
+        console.log(programName)
+        setProgramsAdd(programsAdd.filter(i => i !== programName))
+        console.log(programsAdd)
     }
-
-    const removeProgram = (number) => {
-        setProgramsAdd(programsAdd.filter(i => i.number !== number))
-    }
-
 
     const selectFile = e => {
         setFile(e.target.files[0])
@@ -59,8 +61,8 @@ const CreateStaff = observer(({show, onHide}) => {
         formData.append("post", post)
         formData.append("academic_degree", academicDegree)
         formData.append("academic_title", academicTitle)
-        formData.append("subjects_bac", JSON.stringify(directionsBac))
-        formData.append("subjects_add", JSON.stringify(programsAdd))
+        formData.append("directions_bac", JSON.stringify(directionsBac))
+        formData.append("programs_add", JSON.stringify(programsAdd))
         formData.append("bio_text", bio)
         formData.append("disciplines_and_courses_text", disciplinesAndCourses)
         formData.append("publications_text", publications)
@@ -69,6 +71,9 @@ const CreateStaff = observer(({show, onHide}) => {
         formData.append("phone_number", phoneNumber)
         formData.append("adress", adress)
         formData.append("img", file)
+        for (let [key, val] of formData.entries()) {
+            console.log(key, val);
+        }
         createStaffer(formData).then(() => onHide())
     }
 
@@ -85,39 +90,47 @@ const CreateStaff = observer(({show, onHide}) => {
                         <input type="text" id="post" onChange={e => setPost(e.target.value)}/>
                     </div>
                     <div>
-                        <label htmlFor="academic_degree">Академическая степень</label>
+                        <label htmlFor="academic_degree">Ученая степень</label>
                         <input type="text" id="academic_degree" onChange={e => setAcademicDegree(e.target.value)}/>
                     </div>
                     <div>
-                        <label htmlFor="academic_title">Академическое звание</label>
+                        <label htmlFor="academic_title">Ученое звание</label>
                         <input type="text" id="academic_title" onChange={e => setAcademicTitle(e.target.value)}/>
                     </div>
 
-                    <div>
-                        <label htmlFor="subjects_bac">Направления бакалавариата, у которых преподает</label>
-                        <textarea style={{width: 400, height: 100}} id="subjects_bac"
-                                  onChange={e => setDirectionsBac(e.target.value.split(", "))}/>
-                    </div>
-                    <div>
-                        <label htmlFor="subjects_add">Программы ДПО, у которых преподает</label>
-                        <textarea style={{width: 400, height: 100}} id="subjects_add"
-                                  onChange={e => setProgramsAdd(e.target.value.split(", "))}/>
-                    </div>
+                    {/*<div>*/}
+                    {/*    <label htmlFor="subjects_bac">Направления бакалавариата, на которых преподает сотрудник</label>*/}
+                    {/*    <textarea style={{width: 400, height: 100}} id="subjects_bac"*/}
+                    {/*              onChange={e => setDirectionsBac(e.target.value.split(", "))}/>*/}
+                    {/*</div>*/}
+                    {/*<div>*/}
+                    {/*    <label htmlFor="subjects_add">Программы ДПО, на которых преподает сотрудник</label>*/}
+                    {/*    <textarea style={{width: 400, height: 100}} id="subjects_add"*/}
+                    {/*              onChange={e => setProgramsAdd(e.target.value.split(", "))}/>*/}
+                    {/*</div>*/}
                     <label htmlFor="directions_bachelor">Направления бакалавриата, на которых преподает сотрудник</label>
                     <div id="directions_bachelor">
                         {admission_store.directions_bachelor.map(d =>
-                            <div key={d.id}>
-                                <input id={d.id} type="checkbox" value="0" name={d.name}/>
-                                <label htmlFor={d.id}>{d.name}</label>
+                            <div key={d.name}>
+                                <input id={d.name} type="checkbox" value="0" name={d.name} onChange={() => {
+                                    console.log(document.getElementById(d.name).checked)
+                                    document.getElementById(d.name).checked === true && addDirection(d.name)
+                                    document.getElementById(d.name).checked === false && removeDirection(d.name)
+                                }}/>
+                                <label htmlFor={d.name}>{d.name}</label>
                             </div>
                         )}
                     </div>
                     <label htmlFor="programs_additional">Направления бакалавриата, на которых преподает сотрудник</label>
                     <div id="programs_additional">
                         {admission_store.programs_additional.map(d =>
-                            <div key={d.id}>
-                                <input id={d.id} type="checkbox" value="0" name={d.name}/>
-                                <label htmlFor={d.id}>{d.name}</label>
+                            <div key={d.name}>
+                                <input id={d.name} type="checkbox" value="0" name={d.name} onChange={() => {
+                                    console.log(document.getElementById(d.name).checked)
+                                    document.getElementById(d.name).checked && addProgram(d.name)
+                                    !(document.getElementById(d.name).checked) && removeProgram(d.name)
+                                }}/>
+                                <label htmlFor={d.name}>{d.name}</label>
                             </div>
                         )}
                     </div>

@@ -6,9 +6,8 @@ export const createStaffer = async (staff) => {
     return data
 }
 
-export const fetchStaff = async (subjects_bac, subjectd_add, page=1, limit=8) => {
-    const {data} = await $host.get("api/staff", {params: {
-            subjects_bac, subjectd_add, page, limit
+export const fetchStaff = async (page=1, limit=8) => {
+    const {data} = await $host.get("api/staff", {params: {page, limit
         }})
     console.log(data)
     return data
