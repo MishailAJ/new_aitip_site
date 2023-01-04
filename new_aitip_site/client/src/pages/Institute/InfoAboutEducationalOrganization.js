@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Info_edu_org = () => {
+const InfoAboutEducationalOrganization = () => {
     return (
         <div>
             Info_edu_org
@@ -8,4 +8,4 @@ const Info_edu_org = () => {
     );
 };
 
-export default Info_edu_org;
+export default InfoAboutEducationalOrganization;

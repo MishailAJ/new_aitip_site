@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Industrial_p = () => {
+const IndustrialPartners = () => {
     return (
         <div>
             Industrial_p
@@ -8,4 +8,4 @@ const Industrial_p = () => {
     );
 };
 
-export default Industrial_p;
+export default IndustrialPartners;

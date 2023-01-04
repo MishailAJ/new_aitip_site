@@ -1,11 +1,12 @@
 const Router = require("express")
 const router = new Router()
-const userRouter = require("./userRouter")
 const staffRouter = require("./staffRouter")
+const direction_bachelor = require("./directionBachelorRouter")
 
 
-router.use('/user', userRouter)
 router.use("/staff", staffRouter)
+router.use("/direction_bachelor", direction_bachelor)
+
 
 
 module.exports = router

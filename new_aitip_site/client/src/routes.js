@@ -10,25 +10,25 @@ import {
 } from "./consts/pageConsts";
 import Main from "./pages/Main";
 import Contacts from "./pages/Institute/Contacts";
-import Industrial_p from "./pages/Partners/Industrial_p";
-import Educational_p from "./pages/Partners/Educational_p";
-import Employers_p from "./pages/Partners/Employers_p";
+import IndustrialPartners from "./pages/Partners/IndustrialPartners";
+import EducationalPartners from "./pages/Partners/EducationalPartners";
+import EmployersPartners from "./pages/Partners/EmployersPartners";
 import History from "./pages/Institute/History";
 import Structure from "./pages/Institute/Structure";
-import Info_edu_org from "./pages/Institute/Info_edu_org";
-import Inter_act from "./pages/Institute/Inter_act";
+import InfoAboutEducationalOrganization from "./pages/Institute/InfoAboutEducationalOrganization";
+import InternationalCooperation from "./pages/Institute/InternationalCooperation";
 import Countering from "./pages/Institute/Countering";
 import Admin from "./pages/Admin";
 import PersonalitiesPage from "./pages/Institute/PersonalitiesPage";
-import Legal_Clinic from "./pages/Partners/Legal_Clinic";
-import AdmissionBac from "./pages/Entrance/AdmissionBac";
-import AdmissionAdd from "./pages/Entrance/AdmissionAdd";
+import LegalClinic from "./pages/Partners/LegalClinic";
+import AdmissionBac from "./pages/Admission/AdmissionBac";
+import AdmissionAdd from "./pages/Admission/AdmissionAdd";
 import Documents from "./pages/Institute/Documents";
 import Science from "./pages/Science/Science";
-import Staff from "./pages/Staff/Staff";
-import Students_BAC from "./pages/Students/Students_BAC";
-import Students_APE from "./pages/Students/Students_APE";
-import Science_p from "./pages/Partners/Science_p";
+import Employees from "./pages/Employees/Employees";
+import StudentsBac from "./pages/Students/StudentsBac";
+import StudentsAdd from "./pages/Students/StudentsAdd";
+import SciencePartners from "./pages/Partners/SciencePartners";
 
 export const publicRoutes = [
     {
@@ -41,19 +41,19 @@ export const publicRoutes = [
     },
     {
         path: INDUSTRIAL_P,
-        Component: <Industrial_p/>
+        Component: <IndustrialPartners/>
     },
     {
         path: EDUCATIONAL_P ,
-        Component: <Educational_p/>
+        Component: <EducationalPartners/>
     },
     {
         path: EMPLOYERS_P,
-        Component: <Employers_p/>
+        Component: <EmployersPartners/>
     },
     {
         path: SCIENCE_P,
-        Component: <Science_p/>
+        Component: <SciencePartners/>
     },
     {
         path: HISTORY,
@@ -69,11 +69,11 @@ export const publicRoutes = [
     },
     {
         path: INFO_EDU_ORG,
-        Component: <Info_edu_org/>
+        Component: <InfoAboutEducationalOrganization/>
     },
     {
         path: INTERNATIONAL_ACT ,
-        Component: <Inter_act/>
+        Component: <InternationalCooperation/>
     },
     {
         path: COUNTERING,
@@ -81,7 +81,7 @@ export const publicRoutes = [
     },
     {
         path: LEGAL_CLINIC,
-        Component: <Legal_Clinic/>
+        Component: <LegalClinic/>
     },
     {
         path: ADMISSION_BAC,
@@ -101,15 +101,15 @@ export const publicRoutes = [
     },
     {
         path: STAFF,
-        Component: <Staff/>
+        Component: <Employees/>
     },
     {
         path: STUDENTS_BAC,
-        Component: <Students_BAC/>
+        Component: <StudentsBac/>
     },
     {
         path: STUDENTS_APE,
-        Component: <Students_APE/>
+        Component: <StudentsAdd/>
     },
 ]
 

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Legal_Clinic = () => {
+const Employees = () => {
     return (
         <div>
-            Legal_c
+            Staff
         </div>
     );
 };
 
-export default Legal_Clinic;
+export default Employees;

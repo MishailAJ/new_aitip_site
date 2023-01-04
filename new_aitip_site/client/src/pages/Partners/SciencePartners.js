@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Science_p = () => {
+const SciencePartners = () => {
     return (
         <div>
             Science_p
@@ -8,4 +8,4 @@ const Science_p = () => {
     );
 };
 
-export default Science_p;
+export default SciencePartners;

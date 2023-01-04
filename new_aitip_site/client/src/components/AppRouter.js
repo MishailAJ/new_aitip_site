@@ -11,7 +11,6 @@ import Main from "../pages/Main";
 const AppRouter = () => {
 
     const {user} = useContext(Context);
-    console.log(user.isAuth)
 
     const aRoutes = authRoutes.map(
         ({path, Component}, key) =>
@@ -24,7 +23,7 @@ const AppRouter = () => {
 
     return (
         <Routes>
-            {user.isAuth && aRoutes}
+            {aRoutes}
             {pRoutes}
             <Route path="*" element={<Main/>}/>
         </Routes>
