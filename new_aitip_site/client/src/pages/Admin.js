@@ -1,4 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Container} from "react-bootstrap";
 import CreateDirection from "../components/admin_panels/CreateDirection";
 import CreateStaff from "../components/admin_panels/CreateStaff";

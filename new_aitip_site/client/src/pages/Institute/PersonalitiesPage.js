@@ -33,7 +33,7 @@ const PersonalitiesPage = observer(() => {
             <Row style={{width: "100vw", left: 0}}>
                 <Col md={3} style={{display: "inline-block", width: "200px", right: 0}}>
                     <div style={{width: "200px", margin: "0 20px"}}>
-                        <TypeBar/>
+                        {/*<TypeBar/>*/}
                     </div>
                 </Col>
                 <Col md={10} style={{display: "inline-block", width: "70vw", left: 0}}>

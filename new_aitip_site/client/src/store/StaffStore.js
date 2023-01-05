@@ -3,9 +3,8 @@ import {makeAutoObservable} from "mobx";
 export default class StaffStore {
     constructor() {
         // this._posts = ["Директор", "Главный бухгалтер", "Доцент"]
-        this._posts = []
-        // this._academic_degree = []
-        // this._letter = []
+        this._directionsBac = []
+        this._programsAdd = []
 
         this._staff = []
             // {id: 2, name: "Самсонов", post: "Директор", img: "aitip_logo.png"},
@@ -19,42 +18,37 @@ export default class StaffStore {
         this._totalCount = 0
         this._limit = 10
 
-        this._selectedPost = ""
-        this._selectedAcademic_degree = ""
-        this._selectedLetter = ""
+        this._selectedStaffer = ""
+        this._selectedDirectionsBac = ""
+        this._selectedProgramsAdd = ""
 
         this._cardNumber = 0
         makeAutoObservable(this)
     }
 
-    setPosts(posts) {
-        this._posts = posts
+    setDirectionsBac(directionsBac) {
+        this._directionsBac = directionsBac
     }
 
-    setAcademic_degree(academic_degree) {
-        this._academic_degree = academic_degree
-    }
-
-    setLetter(letter) {
-        this._letter = letter
+    setProgramsAdd(programsAd) {
+        this.programsAd = programsAd
     }
 
     setStaff(staff) {
         this._staff = staff
     }
 
-    setSelectedPost(selectedPost) {
-        this._selectedPost = selectedPost
+    setSelectedStaffer(selectedStaffer) {
+        this._selectedStaffer = selectedStaffer
+    }
+
+    setSelectedDirectionsBac(selectedDirectionsBac) {
+        this._selectedDirectionsBac = selectedDirectionsBac
         this.setPage(1)
     }
 
-    setSelectedAcademic_degree(selectedAcademic_degree) {
-        this._selectedAcademic_degree = selectedAcademic_degree
-        this.setPage(1)
-    }
-
-    setSelectedLetter(selectedLetter) {
-        this._selectedLetter = selectedLetter
+    setSelectedProgramsAdd(selectedProgramsAdd) {
+        this._selectedProgramsAdd = selectedProgramsAdd
         this.setPage(1)
     }
 
@@ -69,32 +63,28 @@ export default class StaffStore {
         this._cardNumber = cardNumber
     }
 
-    get posts() {
-        return this._posts
+    get directionsBac() {
+        return this._directionsBac
     }
 
-    get academic_degree() {
-        return this._academic_degree
-    }
-
-    get letter() {
-        return this._letter
+    get programsAdd() {
+        return this._programsAdd
     }
 
     get staff() {
         return this._staff
     }
 
-    get selectedPost() {
-        return this._selectedPost
+    get selectedStaffer() {
+        return this._selectedStaffer
     }
 
-    get selectedAcademic_degree() {
-        return this._selectedAcademic_degree
+    get selectedDirectionsBac() {
+        return this._selectedDirectionsBac
     }
 
-    get selectedLetter() {
-        return this._selectedLetter
+    get selectedProgramsAdd() {
+        return this._selectedProgramsAdd
     }
 
     get page() {
