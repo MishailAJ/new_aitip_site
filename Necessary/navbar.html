@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: #F5F5F5;
+        }
+        div.example {
+            background: #076DB1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: -1000;
+            width: 100%;
+        }
+
+        .logotext {
+            font-family: 'Open Sans',sans-serif;
+            font-weight: bold;
+            color: white;
+        }
+
+
+        @media screen and (min-width: 601px) {
+            div.example {
+                margin-top: 3.5%;
+            }
+            p.logotext{
+                font-size: 16px;
+                margin-left: 17%;
+            }
+            img.logo {
+                width: 80px;
+                height: 100px;
+                margin-left: 7%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            div.example {
+                margin-top: 7.5%;
+            }
+            p.logotext{
+                font-size: 10px;
+                margin-left: 20%;
+            }
+            img.logo {
+                width: 40px;
+                height: 60px;
+                margin-left: 4%;
+            }
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<img class="logo" src="../../assets1/Logo%20(1).png">
+<div class="example">
+    <p class="logotext">Алтайский институт труда и права</p>
+</div>
+</body>
+</html>
