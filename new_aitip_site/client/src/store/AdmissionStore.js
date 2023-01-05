@@ -4,9 +4,22 @@ export default class AdmissionStore {
     constructor() {
 
         this._directions_bachelor = []
-        this._selectedDirections_bachelor_name = ""
-        this._directions_additional = []
-        this._selectedDirections_additional_name = ""
+        this._selectedDirections_bachelor_name = 0
+        this._programs_additional = [
+            {
+                id: 1,
+                name: "Оценка стоимости предприятия (бизнеса)",
+                price: 50000,
+                supervisor: "Самсонов Р.А."
+            },
+            {
+                id: 2,
+                name: "Менеджмент в кадровой сфере",
+                price: 45000,
+                supervisor: "Петров А.И."
+            }
+        ]
+        this._selectedPrograms_additional_name = 0
 
         makeAutoObservable(this)
     }
@@ -20,12 +33,12 @@ export default class AdmissionStore {
         this._selectedDirections_bachelor_name = selectedDirections_bachelor
     }
 
-    setDirections_additional(directions_additional) {
-        this._directions_additional = directions_additional
+    setPrograms_additional(programs_additional) {
+        this._programs_additional = programs_additional
     }
 
-    setSelectedDirections_additional(selectedDirections_additional) {
-        this._selectedDirections_additional_name = selectedDirections_additional
+    setSelectedPrograms_additional(selectedPrograms_additional) {
+        this._selectedPrograms_additional_name = selectedPrograms_additional
     }
 
 
@@ -37,12 +50,12 @@ export default class AdmissionStore {
         return this._selectedDirections_bachelor_name
     }
 
-    get directions_additional() {
-        return this._directions_additional
+    get programs_additional() {
+        return this._programs_additional
     }
 
-    get selectedDirections_additional() {
-        return this._selectedDirections_additional_name
+    get selectedPrograms_additional() {
+        return this._selectedPrograms_additional_name
     }
 
 }

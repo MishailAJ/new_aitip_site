@@ -1,28 +1,36 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Container} from "react-bootstrap";
+import CreateDirection from "../components/admin_panels/CreateDirection";
+import CreateStaff from "../components/admin_panels/CreateStaff";
+import {fetchDirectionsBachelor} from "../http/admissionAPI";
+import {Context} from "../index";
 
 
 
 const Admin = () => {
-    const [typeVisible, setTypeVisible] = useState(false)
-    const [brandVisible, setBrandVisible] = useState(false)
-    const [deviceVisible, setDeviceVisible] = useState(false)
+    const {admission_store} = useContext(Context)
+
+    useEffect(() => {
+        fetchDirectionsBachelor().then(data =>
+            admission_store.setDirections_bachelor(data.rows)
+        )
+    }, [])
+
+    const [staffVisible, setStaffVisible] = useState(false)
+    const [directionVisible, setDirectionVisible] = useState(false)
 
 
     return (
         <Container className="d-flex flex-column">
-            <Button variant={"outline-info"} className="mt-2 p-2" onClick={() => setTypeVisible(true)}>
-                Добавить тип
+            <Button variant={"outline-info"} className="mt-2 p-2" onClick={() => setStaffVisible(true)}>
+                Добавить сотрудника
             </Button>
-            <Button variant={"outline-info"} className="mt-2 p-2" onClick={() => setBrandVisible(true)}>
-                Добавить бренд
+            <Button variant={"outline-info"} className="mt-2 p-2" onClick={() => setDirectionVisible(true)}>
+                Добавить направление
             </Button>
-            <Button variant={"outline-info"} className="mt-2 p-2" onClick={() => setDeviceVisible(true)}>
-                Добавить устройство
-            </Button>
-            {/*<CreateType show={typeVisible} onHide={() => setTypeVisible(false)}/>*/}
-            {/*<CreateBrand show={brandVisible} onHide={() => setBrandVisible(false)}/>*/}
-            {/*<CreateDevice show={deviceVisible} onHide={() => setDeviceVisible(false)}/>*/}
+            <CreateStaff show={staffVisible} onHide={() => setStaffVisible(false)}/>
+            <CreateDirection show={directionVisible} onHide={() => setDirectionVisible(false)}/>
         </Container>
     );
 };

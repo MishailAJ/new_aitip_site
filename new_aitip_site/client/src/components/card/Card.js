@@ -1,6 +1,6 @@
 import React from "react";
 import FadingImg from "./FadingImg";
-import "../css/component_styles/Card.css";
+import "../../css/component_styles/Card.css";
 
 /** 
  * Компонент карточки с закруглёнными углами и местом для изображения (опционально).

@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../../../components/Card';
+import Card from '../../../components/card/Card';
 import Content6FileIcon from '../../../local_assets/icons/document-text.svg';
 
 const AdmissionBacContent6 = () => {
