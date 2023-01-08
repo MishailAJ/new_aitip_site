@@ -107,19 +107,27 @@
 
 
   <a class="prev" onclick="plusSlides(-1)"><img src="../../assets1/Vector.png" width="7" height="12"></a>
-  <a class="next" onclick="plusSlides(1)"><img src="../../assets1/Vector1.png" width="7" height="12"></a>
+  <a class="next" id="Next" onclick="plusSlides(1)"><img src="../../assets1/Vector1.png" width="7" height="12"></a>
 
 </div>
 <br>
 
 <div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span>
-  <span class="dot" onclick="currentSlide(5)"></span>
-  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" id="Dot1" onclick="currentSlide(1)"></span>
+  <span class="dot" id="Dot2" onclick="currentSlide(2)"></span>
+  <span class="dot" id="Dot3" onclick="currentSlide(3)"></span>
+  <span class="dot" id="Dot4" onclick="currentSlide(4)"></span>
+  <span class="dot" id="Dot5" onclick="currentSlide(5)"></span>
+  <span class="dot" id="Dot6" onclick="currentSlide(6)"></span>
 </div>
+
+<script>
+  function myFunction () {
+      var a = document.getElementById("Next");
+      a.click()
+      }
+      setInterval(myFunction, 5000)
+</script>
 
 <script>
   var slideIndex = 1;
